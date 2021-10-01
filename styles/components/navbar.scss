@@ -1,0 +1,45 @@
+.navbar {
+  position: absolute;
+  top: vw(20);
+  left: 0;
+  right: 0;
+  padding: vw(32) 0;
+  z-index: 100;
+  &.navbar--logo {
+    .navbar__dirs {
+      display: none;
+    }
+    .navbar__name {
+      display: block;
+    }
+  }
+  &.navbar--dir {
+    .navbar__dirs {
+      display: block;
+    }
+    .navbar__name {
+      display: none;
+    }
+  }
+}
+
+.navbar__dirs {
+  opacity: 0.8;
+}
+
+.navbar__container {
+  display: flex;
+  justify-content: space-between;
+  @include h;
+  text-transform: uppercase;
+}
+
+.nav__items {
+  display: flex;
+}
+
+.nav__item {
+  + .nav__item {
+    margin-left: vw(40);
+  }
+}
