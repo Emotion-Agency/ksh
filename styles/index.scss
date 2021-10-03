@@ -7,4 +7,7 @@ body {
   color: white;
   font-size: vw(20);
   @include reg;
+  @include media('<=#{$br3}') {
+    font-size: 16px;
+  }
 }

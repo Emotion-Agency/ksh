@@ -33,7 +33,7 @@
         </div>
         <div class="f-b__col f-b__col--2">
           <ul class="f-b__items">
-            <li data-c="01" class="f-b__item">
+            <li data-c="03" class="f-b__item">
               <a href="/" class="f-b__link">Instagram</a>
             </li>
           </ul>

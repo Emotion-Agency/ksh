@@ -22,4 +22,7 @@
       width: 0%;
     }
   }
+  @include media('<=#{$br3}') {
+    font-size: 18px;
+  }
 }

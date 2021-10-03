@@ -48,9 +48,11 @@
 }
 
 .hero__h {
-  max-width: vw(1050);
   text-align: center;
   white-space: nowrap;
+  @include media('>#{$br3}') {
+    max-width: vw(1050);
+  }
 }
 
 .hero__bottom-text {
@@ -60,6 +62,9 @@
   text-transform: uppercase;
   @include h;
   font-size: vw(23);
+  @include media('<=#{$br3}') {
+    font-size: size(23, 20);
+  }
 }
 
 .home-2 {
@@ -79,7 +84,6 @@
 }
 
 .home-2__images {
-  height: vh(695);
   width: 120%;
   position: absolute;
   top: 50%;
@@ -102,12 +106,12 @@
 }
 
 .home-2__image-wrapper {
-  height: 100%;
+  width: vw(515);
 }
 
 .home-2__img {
-  height: 100%;
-  width: vw(515);
+  // height: 100%;
+  // width: vw(515);
   padding-bottom: toimg(515, 695);
   @include cover;
 }

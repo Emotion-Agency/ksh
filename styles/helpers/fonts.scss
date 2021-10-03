@@ -27,9 +27,15 @@
 .h1 {
   @include h;
   font-size: vw(180);
+  @include media('<=#{$br3}') {
+    font-size: size(180, 52);
+  }
 }
 
 .h2 {
   @include h-thin;
   font-size: vw(200);
+  @include media('<=#{$br3}') {
+    font-size: size(200, 48);
+  }
 }
