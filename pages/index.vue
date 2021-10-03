@@ -1,6 +1,6 @@
 <template>
   <main class="home">
-    <vue-navbar />
+    <vue-navbar state="dir" />
     <vue-hero>
       <div class="hero__h-wrapper">
         <h1 class="h1 hero__h">KSh DESIGN</h1>
@@ -55,25 +55,7 @@
         </div>
       </div>
     </section>
-    <footer class="section hero footer">
-      <div class="hero__images-container">
-        <div class="hero__images-wrapper">
-          <div
-            class="hero__img"
-            style="background-image: url('/img/footer-img.webp')"
-          ></div>
-          <div
-            class="hero__img-mask"
-            style="background-image: url('/img/footer-mask.webp')"
-          ></div>
-        </div>
-      </div>
-      <div class="container hero__container">
-        <div class="hero__h-wrapper">
-          <h1 class="h1 footer__h">Contact us</h1>
-        </div>
-      </div>
-    </footer>
+    <vue-footer />
   </main>
 </template>
 
@@ -82,7 +64,8 @@ import VueBtn from '~/components/vue-btn.vue'
 import VueHero from '~/components/vue-hero.vue'
 import VueNavbar from '~/components/vue-navbar.vue'
 import VueTicker from '~/components/vue-ticker.vue'
+import VueFooter from '~/components/vue-footer.vue'
 export default {
-  components: { VueNavbar, VueTicker, VueBtn, VueHero },
+  components: { VueNavbar, VueTicker, VueBtn, VueHero, VueFooter },
 }
 </script>

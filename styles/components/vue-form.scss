@@ -1,0 +1,138 @@
+$accent: var(--black);
+$red: var(--red);
+
+.form {
+  position: relative;
+}
+
+.input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.input {
+  border-radius: 0;
+  background-color: transparent;
+  width: 100%;
+  border-bottom: 1px solid var(--white);
+  padding-bottom: 6px;
+  padding-top: 3px;
+  line-height: 1em;
+  color: var(--white);
+  font-size: vw(18);
+  transition: border-color 0.3s ease;
+  &:focus,
+  &.js-focus {
+    border-color: var(--white);
+    ~ .label {
+      opacity: 0;
+    }
+  }
+  &.js-error {
+    border-color: $red;
+    ~ .input-validate {
+      opacity: 1;
+      visibility: visible;
+    }
+    ~ .label {
+      color: $red;
+    }
+  }
+  @include media('<=#{$ls}') {
+    font-size: 18px;
+  }
+}
+
+.label {
+  position: absolute;
+  font-size: vw(18);
+  left: 0;
+  top: 3px;
+  line-height: 1em;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  @include media('<=#{$ls}') {
+    font-size: inherit;
+  }
+}
+
+.input-validate {
+  color: $red;
+  font-size: 14px;
+  line-height: 1em;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  left: 0;
+}
+
+abbr {
+  color: $red;
+}
+
+.form__btn {
+  font: inherit;
+  margin-left: auto;
+  position: absolute;
+  right: 0;
+  top: vw(2);
+  background-color: transparent;
+  outline: none;
+  @include h;
+  color: var(--white);
+  text-transform: uppercase;
+}
+
+.form__error-message {
+  background: whitesmoke;
+  color: $red;
+  width: 100%;
+  margin-top: 0px;
+  overflow: hidden;
+  height: 0px;
+  transition: height 0.4s ease, margin-top 0.4s ease;
+}
+
+.form__error-message-text {
+  margin: 10px 20px;
+}
+
+//Reset autofill styles
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--black);
+  box-shadow: 0 0 0px 1000px var(--bg) inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.form__error {
+  margin-top: 10px;
+  padding: 20px;
+  color: white;
+  background-color: var(--red);
+  width: fit-content;
+  position: relative;
+  cursor: pointer;
+  font-size: vw(14);
+  display: flex;
+  line-height: 1em;
+  justify-content: center;
+  align-items: center;
+  @include media('<=#{$br1}') {
+    font-size: 14px;
+  }
+  &::after {
+    content: '\2716';
+    display: block;
+    margin-left: 16px;
+    color: white;
+  }
+}
