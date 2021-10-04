@@ -112,7 +112,8 @@
     grid-template-columns: repeat(3, 1fr) 1px;
     gap: size(60, 35);
     height: fit-content;
-    overflow: auto;
+    overflow-y: hidden;
+    overflow-x: auto;
     width: 100%;
     padding-left: $g-mo;
     // padding-right: $g-mo;

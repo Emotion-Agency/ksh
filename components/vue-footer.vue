@@ -4,11 +4,11 @@
       <div class="hero__images-wrapper">
         <div
           class="hero__img"
-          style="background-image: url('/img/footer-img.webp')"
+          style="background-image: url('/img/footer-img.jpg')"
         ></div>
         <div
           class="hero__img-mask"
-          style="background-image: url('/img/footer-mask.webp')"
+          style="background-image: url('/img/footer-mask.png')"
         ></div>
       </div>
     </div>

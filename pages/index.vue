@@ -13,19 +13,19 @@
           <div class="home-2__image-wrapper">
             <div
               class="home-2__img"
-              style="background-image: url('/img/comm-1.webp')"
+              style="background-image: url('/img/comm-1.jpg')"
             ></div>
           </div>
           <div class="home-2__image-wrapper">
             <div
               class="home-2__img"
-              style="background-image: url('/img/comm-2.webp')"
+              style="background-image: url('/img/comm-2.jpg')"
             ></div>
           </div>
           <div class="home-2__image-wrapper">
             <div
               class="home-2__img"
-              style="background-image: url('/img/comm-3.webp')"
+              style="background-image: url('/img/comm-3.jpg')"
             ></div>
           </div>
         </div>
@@ -50,7 +50,7 @@
           <div class="home-3__image-wrapper">
             <div
               class="home-3__img"
-              style="background-image: url('/img/home-3.webp')"
+              style="background-image: url('/img/home-3.jpg')"
             ></div>
           </div>
         </div>

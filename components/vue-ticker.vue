@@ -19,7 +19,7 @@ export default {
     },
     duration: {
       type: Number,
-      default: 120,
+      default: 150,
     },
     multiplier: {
       type: Number,

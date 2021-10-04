@@ -9,13 +9,13 @@
           class="hero__img parallax-img"
           data-section-parallax="-0.13"
           data-scale="1.07"
-          style="background-image: url('/img/home.webp')"
+          style="background-image: url('/img/home.jpg')"
         ></div>
         <div
           class="hero__img-mask parallax-img"
           data-section-parallax="-0.13"
           data-scale="1.07"
-          style="background-image: url('/img/home-mask.webp')"
+          style="background-image: url('/img/home-mask.png')"
         ></div>
       </div>
     </div>
