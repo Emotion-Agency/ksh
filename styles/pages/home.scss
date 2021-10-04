@@ -70,6 +70,10 @@
 .home-2 {
   height: 100vh;
   background-color: var(--black);
+  @include media('<=#{$br3}') {
+    height: auto;
+    min-height: 100vh;
+  }
 }
 
 .home-2__content {
@@ -81,37 +85,82 @@
   justify-content: center;
   align-items: center;
   position: relative;
+  @include media('<=#{$br3}') {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
 }
 
 .home-2__images {
-  width: 120%;
-  position: absolute;
-  top: 50%;
   display: flex;
   justify-content: space-between;
-  transform: translateY(-50%);
-  z-index: 0;
+  width: 120%;
+  @include media('>#{$br3}') {
+    transform: translateY(-50%);
+    z-index: 0;
+    position: absolute;
+    top: 50%;
+  }
+  @include media('<=#{$br3}') {
+    order: 1;
+    margin-top: 40px;
+    justify-content: start;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) 1px;
+    gap: size(60, 35);
+    height: fit-content;
+    overflow: auto;
+    width: 100%;
+    padding-left: $g-mo;
+    // padding-right: $g-mo;
+  }
 }
 
 .home-2__btn {
-  margin-top: 27px;
+  margin-top: vw(27);
   position: relative;
   z-index: 2;
+  order: 2;
+  margin-left: $g-mo;
+  @include media('<=#{$br3}') {
+    margin-top: 10px;
+  }
 }
 
 .home-2__ticker {
   margin-top: vw(33);
   position: relative;
   z-index: 2;
+  @include media('<=#{$br3}') {
+    order: 3;
+    display: none;
+  }
+}
+
+.home-2__h2-mob {
+  order: 3;
+  text-transform: uppercase;
+  line-height: 1em;
+  padding-left: $g-mo;
+  padding-right: $g-mo;
+  @include media('>#{$br3}') {
+    display: none;
+  }
 }
 
 .home-2__image-wrapper {
   width: vw(515);
+  @include media('<=#{$br3}') {
+    width: 70vw;
+  }
 }
 
 .home-2__img {
   // height: 100%;
-  // width: vw(515);
+  width: 100%;
   padding-bottom: toimg(515, 695);
   @include cover;
 }
@@ -119,12 +168,22 @@
 .home-3 {
   height: 100vh;
   background-color: var(--gray-2);
+  @include media('<=#{$br3}') {
+    min-height: 100vh;
+    height: auto;
+  }
 }
 
 .home-3__container {
   display: flex;
   align-items: center;
   height: 100%;
+  @include media('<=#{$br3}') {
+    padding-top: 70px;
+    padding-bottom: 70px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 .home-3__text-wrapper {
@@ -135,48 +194,71 @@
   position: relative;
   z-index: 1;
   width: 100%;
+  @include media('<=#{$br3}') {
+    grid-template-rows: 1fr;
+  }
 }
 
 .home-3__text-line {
   line-height: 1em;
   position: relative;
   &:nth-of-type(1) {
-    left: vw(560);
-    grid-row-start: 1;
-    grid-row-end: 2;
+    @include media('>#{$br3}') {
+      left: vw(560);
+      grid-row-start: 1;
+      grid-row-end: 2;
+    }
   }
   &:nth-of-type(2) {
-    grid-row-start: 2;
-    grid-row-end: 3;
-    left: vw(-20);
+    @include media('>#{$br3}') {
+      grid-row-start: 2;
+      grid-row-end: 3;
+      left: vw(-20);
+    }
   }
   &:nth-of-type(3) {
-    left: vw(705);
-    grid-row-start: 3;
-    grid-row-end: 4;
-    grid-column-start: 1;
-    grid-column-end: 2;
+    @include media('>#{$br3}') {
+      left: vw(705);
+      grid-row-start: 3;
+      grid-row-end: 4;
+      grid-column-start: 1;
+      grid-column-end: 2;
+    }
   }
 }
 
 .home-3__btn {
   font-size: inherit;
   position: relative;
-  top: vw(-30);
-  grid-row-start: 3;
-  grid-row-end: 4;
-  grid-column-start: 1;
-  grid-column-end: 2;
+  @include media('>#{$br3}') {
+    top: vw(-30);
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+  @include media('<=#{$br3}') {
+    grid-row-start: 4;
+    grid-row-end: 5;
+    margin-top: 20px;
+  }
 }
 
 .home-3__image-container {
-  position: absolute;
-  top: 50%;
-  right: vw(392);
-  transform: translateY(-50%);
   height: vw(772);
   width: vw(560);
-  z-index: 0;
+  @include media('>#{$br3}') {
+    z-index: 0;
+    position: absolute;
+    top: 50%;
+    right: vw(392);
+    transform: translateY(-50%);
+  }
+  @include media('<=#{$br3}') {
+    width: 100%;
+    height: auto;
+    margin-top: 40px;
+  }
 }
 
 .home-3__image-wrapper {
@@ -187,5 +269,9 @@
 .home-3__img {
   width: 100%;
   height: 100%;
+  @include media('<=#{$br3}') {
+    height: 0;
+    padding-bottom: toimg(335, 462);
+  }
   @include cover;
 }

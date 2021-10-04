@@ -34,6 +34,7 @@
           text="Commercial interiors"
           divider=" "
         />
+        <h2 class="h2 home-2__h2-mob">Commercial interiors</h2>
         <vue-btn class="home-2__btn" text="View more" to="/" />
       </div>
     </section>

@@ -48,17 +48,25 @@
 
 .f-b__inner {
   display: flex;
+  @include media('<=#{$br3}') {
+    display: block;
+  }
 }
 
 .f-b__col {
-  &--1 {
-    width: vw(582);
+  @include media('>#{$br3}') {
+    &--1 {
+      width: vw(582);
+    }
+    &--2 {
+      width: vw(582);
+    }
+    &--3 {
+      width: vw(553);
+    }
   }
-  &--2 {
-    width: vw(582);
-  }
-  &--3 {
-    width: vw(553);
+  @include media('<=#{$br3}') {
+    width: 60%;
   }
 }
 
@@ -71,9 +79,21 @@
     margin-right: vw(32);
     position: relative;
     top: vw(2);
+    @include media('<=#{$br3}') {
+      font-size: 12px;
+    }
   }
   + .f-b__item {
     margin-top: 16px;
+  }
+  @include media('<=#{$br3}') {
+    margin-top: 16px;
+  }
+}
+
+.f-b__h {
+  @include media('<=#{$br3}') {
+    margin-top: 20px;
   }
 }
 
@@ -99,6 +119,9 @@
 
 .f-b__form {
   margin-top: vw(56);
+  @include media('<=#{$br3}') {
+    margin-top: 24px;
+  }
 }
 
 .footer__end {
@@ -111,6 +134,9 @@
 
 .footer__privacy {
   font-size: vw(16);
+  @include media('<=#{$br3}') {
+    font-size: 14px;
+  }
 }
 
 .footer__go-top {
@@ -122,5 +148,19 @@
   transition: opacity 0.5s ease;
   &:hover {
     opacity: 0.7;
+  }
+  @include media('<=#{$br3}') {
+    display: none;
+  }
+}
+
+.footer__logo {
+  width: size(29, 14);
+  height: size(62, 31);
+  svg {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
   }
 }

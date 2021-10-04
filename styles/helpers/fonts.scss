@@ -27,6 +27,7 @@
 .h1 {
   @include h;
   font-size: vw(180);
+  line-height: 1em;
   @include media('<=#{$br3}') {
     font-size: size(180, 52);
   }
@@ -35,7 +36,9 @@
 .h2 {
   @include h-thin;
   font-size: vw(200);
+  line-height: 1em;
   @include media('<=#{$br3}') {
     font-size: size(200, 48);
+    line-height: 1em;
   }
 }
