@@ -28,7 +28,7 @@ export class Ticker {
 
   get velocity() {
     const target = window.ss?.state?.target ?? 0
-    return this.isScrolling ? this.scrollPos - target : 0
+    return this.isScrolling ? (this.scrollPos - target) * 0.25 : 0
   }
 
   get isScrolling() {

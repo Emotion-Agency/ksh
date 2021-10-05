@@ -6,6 +6,7 @@
       transform: translateY(-100%);
       opacity: 0;
       pointer-events: none;
+      touch-action: none;
     }
     .footer__bottom {
       transform: translateY(0%);

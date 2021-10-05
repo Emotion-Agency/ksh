@@ -4,6 +4,7 @@
     :class="[
       color === 'black' && 'navbar--black',
       state === 'logo' ? 'navbar--logo' : 'navbar--dir',
+      isOpen && 'open',
     ]"
   >
     <div class="container navbar__container">
@@ -72,7 +73,7 @@ export default {
           _id: keysGenerator(8),
         },
         {
-          to: '/',
+          to: '/about',
           name: 'About',
           _id: keysGenerator(8),
         },
