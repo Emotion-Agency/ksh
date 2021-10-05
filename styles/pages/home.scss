@@ -45,14 +45,18 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 100%;
+  padding-left: $g-offset;
+  padding-right: $g-offset;
+  @include media('<=#{$br3}') {
+    padding-left: $g-mo;
+    padding-right: $g-mo;
+  }
 }
 
 .hero__h {
   text-align: center;
-  white-space: nowrap;
-  @include media('>#{$br3}') {
-    max-width: vw(1050);
-  }
+  max-width: 100%;
 }
 
 .hero__bottom-text {
@@ -229,8 +233,10 @@
 }
 
 .home-3__btn {
-  font-size: inherit;
   position: relative;
+  @include media('>#{$br1}') {
+    font-size: inherit;
+  }
   @include media('>#{$br3}') {
     top: vw(-30);
     grid-row-start: 3;

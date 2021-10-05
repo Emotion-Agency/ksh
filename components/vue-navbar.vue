@@ -68,7 +68,7 @@ export default {
     return {
       navItems: [
         {
-          to: '/',
+          to: '/projects/private-residential',
           name: 'Projects',
           _id: keysGenerator(8),
         },

@@ -81,8 +81,13 @@
     background-color: var(--white);
     transition: width 0.5s ease;
   }
-  &:hover,
-  &.nuxt-link-exact-active {
+  // &:hover,
+  // &.nuxt-link-exact-active {
+  //   &::after {
+  //     width: 100%;
+  //   }
+  // }
+  &:hover {
     &::after {
       width: 100%;
     }

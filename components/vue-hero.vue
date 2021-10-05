@@ -24,3 +24,18 @@
     </div>
   </section>
 </template>
+
+<script>
+export default {
+  props: {
+    image: {
+      type: String,
+      default: '/img/home.jpg',
+    },
+    mask: {
+      type: String,
+      default: '/img/home-mask.png',
+    },
+  },
+}
+</script>

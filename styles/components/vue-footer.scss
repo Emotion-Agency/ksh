@@ -21,12 +21,13 @@
 .footer__h {
   @include h-thin;
   text-transform: uppercase;
-  white-space: nowrap;
   align-items: center;
   display: block;
   background-color: transparent;
   transition: opacity 0.5s ease, footer-easing();
   color: inherit;
+  text-align: center;
+  width: 100%;
   @include media('>#{$br1}') {
     &:hover {
       opacity: 0.7;
