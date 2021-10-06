@@ -21,8 +21,10 @@ export default {
 
   async mounted() {
     const { default: Masonry } = await import('masonry-layout')
+    const { delayPromise } = await import('~/scripts/utils/delay')
     const elem = document.querySelector('.grid')
 
+    await delayPromise(100)
     new Masonry(elem, {
       // options
       itemSelector: '.grid__item',

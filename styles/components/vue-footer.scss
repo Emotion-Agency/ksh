@@ -7,6 +7,7 @@
       opacity: 0;
       pointer-events: none;
       touch-action: none;
+      visibility: hidden;
     }
     .footer__bottom {
       transform: translateY(0%);
@@ -24,7 +25,7 @@
   align-items: center;
   display: block;
   background-color: transparent;
-  transition: opacity 0.5s ease, footer-easing();
+  transition: opacity 0.5s ease, visibility 0.5s ease, footer-easing();
   color: inherit;
   text-align: center;
   width: 100%;

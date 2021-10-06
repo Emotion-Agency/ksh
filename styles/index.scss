@@ -3,6 +3,13 @@
 @import './layout.scss';
 @import './pages/all.scss';
 
+* {
+  &::selection {
+    color: white;
+    background: #ece5df;
+  }
+}
+
 body {
   color: white;
   font-size: vw(20);
