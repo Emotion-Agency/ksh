@@ -64,7 +64,9 @@ We use genuine and pleasantly tactile materials and transform them into a pure, 
 import VueFooter from '~/components/vue-footer.vue'
 import VueImage from '~/components/vue-image.vue'
 import VueNavbar from '~/components/vue-navbar.vue'
+import transition from '~/mixins/transition.vue'
 export default {
   components: { VueNavbar, VueImage, VueFooter },
+  mixins: [transition],
 }
 </script>

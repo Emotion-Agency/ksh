@@ -15,9 +15,11 @@
 import VueFooter from '~/components/vue-footer.vue'
 import VueHero from '~/components/vue-hero.vue'
 import VueMasonry from '~/components/vue-masonry.vue'
+import transition from '~/mixins/transition.vue'
 import { keysGenerator } from '~/scripts/utils/keysGenerator'
 export default {
   components: { VueHero, VueFooter, VueMasonry },
+  mixins: [transition],
 
   computed: {
     getImages() {

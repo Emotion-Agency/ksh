@@ -69,6 +69,7 @@
 
 .nav__link {
   display: flex;
+  cursor: pointer;
   width: fit-content;
   flex-direction: column;
   justify-content: center;
@@ -176,7 +177,16 @@
 }
 
 .mobile-nav__item {
+  text-align: center;
+  display: block;
+  line-height: 1.2em;
   + .mobile-nav__item {
     margin-top: 40px;
+  }
+  a {
+    display: block;
+    + a {
+      margin-top: 40px;
+    }
   }
 }

@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import imagesLoaded from 'imagesloaded'
 export default {
   props: {
     items: {
@@ -25,9 +26,12 @@ export default {
     const elem = document.querySelector('.grid')
 
     await delayPromise(100)
-    new Masonry(elem, {
-      // options
-      itemSelector: '.grid__item',
+    imagesLoaded(document.querySelector('.masonry'), () => {
+      new Masonry(elem, {
+        // options
+        itemSelector: '.grid__item',
+      })
+      window.ss?.reset()
     })
   },
 }

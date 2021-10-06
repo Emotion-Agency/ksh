@@ -66,7 +66,9 @@ import VueHero from '~/components/vue-hero.vue'
 import VueNavbar from '~/components/vue-navbar.vue'
 import VueTicker from '~/components/vue-ticker.vue'
 import VueFooter from '~/components/vue-footer.vue'
+import transition from '~/mixins/transition.vue'
 export default {
   components: { VueNavbar, VueTicker, VueBtn, VueHero, VueFooter },
+  mixins: [transition],
 }
 </script>
