@@ -13,19 +13,19 @@
           <div class="home-2__image-wrapper">
             <div
               class="home-2__img"
-              style="background-image: url('/img/comm-1.webp')"
+              style="background-image: url('/img/comm-1.jpg')"
             ></div>
           </div>
           <div class="home-2__image-wrapper">
             <div
               class="home-2__img"
-              style="background-image: url('/img/comm-2.webp')"
+              style="background-image: url('/img/comm-2.jpg')"
             ></div>
           </div>
           <div class="home-2__image-wrapper">
             <div
               class="home-2__img"
-              style="background-image: url('/img/comm-3.webp')"
+              style="background-image: url('/img/comm-3.jpg')"
             ></div>
           </div>
         </div>
@@ -34,6 +34,7 @@
           text="Commercial interiors"
           divider=" "
         />
+        <h2 class="h2 home-2__h2-mob">Commercial interiors</h2>
         <vue-btn class="home-2__btn" text="View more" to="/" />
       </div>
     </section>
@@ -49,7 +50,7 @@
           <div class="home-3__image-wrapper">
             <div
               class="home-3__img"
-              style="background-image: url('/img/home-3.webp')"
+              style="background-image: url('/img/home-3.jpg')"
             ></div>
           </div>
         </div>
@@ -65,7 +66,9 @@ import VueHero from '~/components/vue-hero.vue'
 import VueNavbar from '~/components/vue-navbar.vue'
 import VueTicker from '~/components/vue-ticker.vue'
 import VueFooter from '~/components/vue-footer.vue'
+import transition from '~/mixins/transition.vue'
 export default {
   components: { VueNavbar, VueTicker, VueBtn, VueHero, VueFooter },
+  mixins: [transition],
 }
 </script>

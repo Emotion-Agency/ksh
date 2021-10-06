@@ -3,8 +3,28 @@
 @import './layout.scss';
 @import './pages/all.scss';
 
+* {
+  &::selection {
+    color: white;
+    background: #ece5df;
+  }
+}
+
 body {
   color: white;
   font-size: vw(20);
   @include reg;
+  @include media('<=#{$br1}') {
+    font-size: 16px;
+  }
+}
+
+.image-wrapper {
+  width: 100%;
+}
+
+.img {
+  @include cover;
+  height: 0;
+  width: 100%;
 }

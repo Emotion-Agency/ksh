@@ -1,6 +1,10 @@
 .container {
   position: relative;
   width: 100%;
-  padding-left: vw(98);
-  padding-right: vw(98);
+  padding-left: $g-offset;
+  padding-right: $g-offset;
+  @include media('<=#{$br3}') {
+    padding-left: $g-mo;
+    padding-right: $g-mo;
+  }
 }

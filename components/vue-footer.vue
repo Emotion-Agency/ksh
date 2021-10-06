@@ -4,11 +4,11 @@
       <div class="hero__images-wrapper">
         <div
           class="hero__img"
-          style="background-image: url('/img/footer-img.webp')"
+          style="background-image: url('/img/footer-img.jpg')"
         ></div>
         <div
           class="hero__img-mask"
-          style="background-image: url('/img/footer-mask.webp')"
+          style="background-image: url('/img/footer-mask.png')"
         ></div>
       </div>
     </div>
@@ -33,7 +33,7 @@
         </div>
         <div class="f-b__col f-b__col--2">
           <ul class="f-b__items">
-            <li data-c="01" class="f-b__item">
+            <li data-c="03" class="f-b__item">
               <a href="/" class="f-b__link">Instagram</a>
             </li>
           </ul>
