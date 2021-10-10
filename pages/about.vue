@@ -18,7 +18,7 @@
           </div>
         </div>
         <div class="about-1__right">
-          <div class="about-1__text-block tb tb--p">
+          <div class="about-1__text-block tb">
             <h2 class="tb__h2">
               KSh Design Bureau is a team of skilled designers and architects
               specializing in private architecture and interior design for

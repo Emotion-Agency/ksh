@@ -14,6 +14,11 @@ body {
   color: white;
   font-size: vw(20);
   @include reg;
+  height: 100vh;
+  overflow: hidden !important;
+  position: relative;
+  overscroll-behavior-y: none;
+  @include smooth-font;
   @include media('<=#{$br1}') {
     font-size: 16px;
   }
