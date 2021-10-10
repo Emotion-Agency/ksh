@@ -23,7 +23,7 @@ export default {
       raf,
     })
 
-    // this.parallaxInit()
+    this.parallaxInit()
   },
 
   methods: {
