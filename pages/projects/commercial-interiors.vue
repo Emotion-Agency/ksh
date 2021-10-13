@@ -1,9 +1,9 @@
 <template>
   <div class="projects">
     <vue-navbar />
-    <vue-hero image="/img/pr-hero.jpg">
+    <vue-hero image="/img/com-hero.jpg">
       <div class="hero__h-wrapper">
-        <h1 class="h1 hero__h projects__h">Private Residential</h1>
+        <h1 class="h1 hero__h projects__h">Commercial Interiors</h1>
       </div>
     </vue-hero>
     <vue-masonry :items="getImages" />

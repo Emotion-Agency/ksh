@@ -35,7 +35,11 @@
           divider=" "
         />
         <h2 class="h2 home-2__h2-mob">Commercial interiors</h2>
-        <vue-btn class="home-2__btn" text="View more" to="/" />
+        <vue-btn
+          class="home-2__btn"
+          text="View more"
+          to="/projects/commercial-interiors"
+        />
       </div>
     </section>
     <section class="section home-3">
@@ -43,7 +47,11 @@
         <div class="home-3__text-wrapper">
           <div class="h2 home-3__text-line">Private</div>
           <div class="h2 home-3__text-line">Residential</div>
-          <vue-btn text="View more" class="home-3__btn" />
+          <vue-btn
+            text="View more"
+            class="home-3__btn"
+            to="/projects/private-residential"
+          />
           <div class="h2 home-3__text-line">Interiors</div>
         </div>
         <div class="home-3__image-container">

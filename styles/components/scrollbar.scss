@@ -3,6 +3,10 @@
   // height: var(--vh);
   overflow: hidden;
   will-change: scroll-position;
+  @include media('<=960px') {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */

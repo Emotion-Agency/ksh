@@ -31,7 +31,7 @@ export default {
         // options
         itemSelector: '.grid__item',
       })
-      window.ss?.reset()
+      window.innerWidth > 960 && window.ss?.reset()
     })
   },
 }

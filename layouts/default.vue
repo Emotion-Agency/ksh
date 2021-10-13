@@ -19,7 +19,7 @@ export default {
       isFixed: false,
       friction: 0.03,
       stepSize: 0.9,
-      scrollbar: false,
+      scrollbar: true,
       raf,
     })
 

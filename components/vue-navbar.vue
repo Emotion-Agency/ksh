@@ -104,7 +104,7 @@ export default {
               _id: keysGenerator(8),
             },
             {
-              to: '/projects/private-residential',
+              to: '/projects/commercial-interiors',
               name: 'Commercial interiors',
               _id: keysGenerator(8),
             },
@@ -116,7 +116,7 @@ export default {
           _id: keysGenerator(8),
         },
         {
-          to: '/',
+          to: '/contact',
           name: 'Contact',
           _id: keysGenerator(8),
         },
