@@ -7,7 +7,7 @@
       </div>
     </vue-hero>
     <vue-masonry :items="getImages" />
-    <vue-footer />
+    <vue-footer image="/img/com-hero.jpg" />
   </div>
 </template>
 

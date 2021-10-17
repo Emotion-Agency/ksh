@@ -2,13 +2,17 @@
   <div id="app">
     <div id="scroll-container">
       <Nuxt />
+      <div id="gl"></div>
     </div>
   </div>
 </template>
 
 <script>
+import emitter from 'tiny-emitter/instance'
+
 export default {
   async mounted() {
+    const { Scetch } = await import('@emotionagency/glhtml')
     const { SmoothScroll } = await import('@emotionagency/smoothscroll')
     const { raf } = await import('@emotionagency/utils')
 
@@ -24,6 +28,15 @@ export default {
     })
 
     this.parallaxInit()
+
+    if (screen.width > 960) {
+      window.scetch = new Scetch('#gl', {
+        raf,
+        dpr: window.devicePixelRatio,
+      })
+
+      emitter.emit('scetchCreated')
+    }
   },
 
   methods: {

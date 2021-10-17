@@ -1,14 +1,20 @@
 <template>
-  <footer class="section hero footer" :class="[isOpen && 'footer--open']">
+  <footer
+    ref="footer"
+    class="section hero footer"
+    :class="[isOpen && 'footer--open']"
+  >
     <div class="hero__images-container" @click.stop="closeFooter">
       <div class="hero__images-wrapper">
         <div
+          data-footer-image
           class="hero__img"
-          style="background-image: url('/img/footer-img.jpg')"
+          :style="{ backgroundImage: `url('${image}')` }"
         ></div>
         <div
+          data-footer-mask
           class="hero__img-mask"
-          style="background-image: url('/img/footer-mask.png')"
+          :style="{ backgroundImage: `url('${mask}')` }"
         ></div>
       </div>
     </div>
@@ -84,10 +90,26 @@
 
 <script>
 export default {
+  props: {
+    image: {
+      type: String,
+      default: '/img/footer-img.jpg',
+    },
+    mask: {
+      type: String,
+      default: '/img/footer-mask.png',
+    },
+  },
   data() {
     return {
       isOpen: false,
     }
+  },
+  async mounted() {
+    await this.initFooterAnimation()
+  },
+  beforeDestroy() {
+    this.fos && this.fos.destroy()
   },
   methods: {
     openFooter() {
@@ -95,6 +117,11 @@ export default {
     },
     closeFooter() {
       this.isOpen = false
+    },
+    async initFooterAnimation() {
+      const { FooterOnScroll } = await import('~/scripts/FooterOnScroll')
+
+      this.fos = new FooterOnScroll(this.$refs.footer)
     },
   },
 }

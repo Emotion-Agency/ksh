@@ -57,8 +57,9 @@
         <div class="home-3__image-container">
           <div class="home-3__image-wrapper">
             <div
-              class="home-3__img"
+              class="home-3__img js-gl-img"
               style="background-image: url('/img/home-3.jpg')"
+              data-src="/img/home-3.jpg"
             ></div>
           </div>
         </div>
@@ -69,6 +70,8 @@
 </template>
 
 <script>
+import emitter from 'tiny-emitter/instance'
+
 import VueBtn from '~/components/vue-btn.vue'
 import VueHero from '~/components/vue-hero.vue'
 import VueNavbar from '~/components/vue-navbar.vue'
@@ -78,5 +81,14 @@ import transition from '~/mixins/transition.vue'
 export default {
   components: { VueNavbar, VueTicker, VueBtn, VueHero, VueFooter },
   mixins: [transition],
+
+  async mounted() {
+    const { initImages } = await import('~/scripts/GL/Images/init')
+    if (window.scetch) {
+      initImages()
+    } else {
+      emitter.on('scetchCreated', initImages)
+    }
+  },
 }
 </script>

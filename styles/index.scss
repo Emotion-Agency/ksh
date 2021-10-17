@@ -33,3 +33,26 @@ body {
   height: 0;
   width: 100%;
 }
+
+#gl,
+#gl-2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  pointer-events: none;
+}
+#gl {
+  // opacity: 0;
+  z-index: 100;
+  transition: opacity 1s ease;
+}
+
+#gl-2 {
+  z-index: -2;
+}
+
+.noisy {
+  @include coverdiv(fixed);
+  pointer-events: none;
+}
