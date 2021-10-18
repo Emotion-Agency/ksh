@@ -12,6 +12,14 @@ import emitter from 'tiny-emitter/instance'
 
 export default {
   async mounted() {
+    const { default: supportsWebP } = await import('supports-webp')
+
+    if (await supportsWebP) {
+      this.$store.commit('app/setIsWebp', true)
+    } else {
+      this.$store.commit('app/setIsWebp', false)
+    }
+
     const { Scetch } = await import('@emotionagency/glhtml')
     const { SmoothScroll } = await import('@emotionagency/smoothscroll')
     const { raf } = await import('@emotionagency/utils')
@@ -37,6 +45,10 @@ export default {
 
       emitter.emit('scetchCreated')
     }
+
+    const { default: NavbarPos } = await import('~/scripts/utils/navbarPos')
+    this.navbarPos = new NavbarPos()
+    this.navbarPos.init()
   },
 
   methods: {
