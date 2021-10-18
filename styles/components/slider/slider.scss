@@ -4,6 +4,7 @@ $bigScreen: '1150px';
   position: relative;
   width: 100vw;
   height: 100vh;
+  height: var(--vh);
   padding-left: $g-offset;
   padding-right: $g-offset;
   @include media('<=#{$br3}') {

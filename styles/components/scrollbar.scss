@@ -1,6 +1,6 @@
 #scroll-container {
   height: 100vh;
-  // height: var(--vh);
+  height: var(--vh);
   overflow: hidden;
   will-change: scroll-position;
   @include media('<=960px') {

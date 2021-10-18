@@ -12,6 +12,7 @@
   animation-timing-function: cubic-bezier(0.91, 0.04, 0.45, 0.83);
   animation-play-state: paused;
   animation-fill-mode: forwards;
+  pointer-events: none;
 }
 
 .loader__bg {
@@ -41,17 +42,21 @@
 @keyframes loaderOut {
   0% {
     clip-path: ellipse(100% 100% at 15% 50%);
+    visibility: visible;
   }
   100% {
     clip-path: ellipse(100% 0% at 15% 50%);
+    visibility: hidden;
   }
 }
 
 @keyframes loaderIn {
   0% {
     clip-path: ellipse(100% 0% at 15% 50%);
+    visibility: hidden;
   }
   100% {
     clip-path: ellipse(100% 100% at 15% 50%);
+    visibility: visible;
   }
 }
