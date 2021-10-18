@@ -1,3 +1,4 @@
+import gsap from 'gsap'
 import { lerp } from '@emotionagency/utils'
 import { Figure } from '@emotionagency/glhtml'
 
@@ -13,6 +14,10 @@ export default class Images extends Figure {
 
     this.mouse = new FigureMouse(this)
     this.mouse.addEvents()
+    this.onMouseEnter = this.onMouseEnter.bind(this)
+    this.onMouseLeave = this.onMouseLeave.bind(this)
+    this.$el.addEventListener('mouseenter', this.onMouseEnter)
+    this.$el.addEventListener('mouseleave', this.onMouseLeave)
   }
 
   createGeometry() {
@@ -31,7 +36,7 @@ export default class Images extends Figure {
       uTexture: { type: 't', value: this.texture },
       uDistortion: { value: 0 },
       uScale: { value: 0 },
-      uClicked: { value: 0 },
+      uHover: { value: 0 },
       uCompleted: { value: 0 },
       uStrength: { value: 0 },
       uViewportY: { value: window.innerHeight },
@@ -78,6 +83,34 @@ export default class Images extends Figure {
 
   get isScrolling() {
     return window.ss?.state?.scrolling ?? false
+  }
+
+  onMouseEnter() {
+    gsap.to(this.material.uniforms.uHover, {
+      duration: 1,
+      value: 1,
+      ease: 'power2.out',
+    })
+
+    gsap.to(this.material.uniforms.uScale, {
+      duration: 1,
+      value: 0.04,
+      ease: 'power2.out',
+    })
+  }
+
+  onMouseLeave() {
+    gsap.to(this.material.uniforms.uHover, {
+      duration: 1,
+      value: 0,
+      ease: 'power2.out',
+    })
+
+    gsap.to(this.material.uniforms.uScale, {
+      duration: 1,
+      value: 0,
+      ease: 'power2.out',
+    })
   }
 
   resize() {
