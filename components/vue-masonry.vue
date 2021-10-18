@@ -2,7 +2,12 @@
   <div class="masonry">
     <div class="container masonry__container">
       <div class="grid">
-        <div v-for="item in items" :key="item._id" class="grid__item">
+        <div
+          v-for="(item, idx) in items"
+          :key="item._id"
+          class="grid__item"
+          @click="clickItem(idx)"
+        >
           <img
             class="grid__img js-gl-img"
             :src="item.img"
@@ -48,6 +53,11 @@ export default {
     } else {
       emitter.on('scetchCreated', initImages)
     }
+  },
+  methods: {
+    clickItem(idx = 0) {
+      this.$emit('clickItem', idx)
+    },
   },
 }
 </script>
