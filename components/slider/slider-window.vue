@@ -1,6 +1,6 @@
 <template>
   <div class="slider-window" :class="[isOpen && 'slider-window--open']">
-    <button class="slider-window__close">
+    <button class="slider-window__close" @click="close">
       <svg
         width="30"
         height="30"
@@ -46,6 +46,11 @@ export default {
     isOpen: {
       type: Boolean,
       default: false,
+    },
+  },
+  methods: {
+    close() {
+      this.$emit('close')
     },
   },
 }

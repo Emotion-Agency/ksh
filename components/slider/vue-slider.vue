@@ -42,6 +42,12 @@ export default {
     }
   },
 
+  watch: {
+    current() {
+      this.currentSlide = this.current
+    },
+  },
+
   methods: {
     prev() {
       if (this.currentSlide > 0) {

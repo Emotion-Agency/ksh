@@ -12,6 +12,7 @@
       :items="getImagesToSlider"
       :is-open="isSliderOpen"
       :start-from="startFrom"
+      @close="closeSlider"
     />
   </div>
 </template>
@@ -46,7 +47,7 @@ export default {
       return images
     },
     getImagesToSlider() {
-      const length = 3
+      const length = 18
       const images = []
 
       for (let i = 0; i < length; i++) {
@@ -60,9 +61,12 @@ export default {
   },
   methods: {
     openSlider(idx = 0) {
-      console.log(idx)
       this.startFrom = idx
       this.isSliderOpen = true
+    },
+    closeSlider() {
+      this.startFrom = 0
+      this.isSliderOpen = false
     },
   },
 }
