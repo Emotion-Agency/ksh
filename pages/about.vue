@@ -1,7 +1,7 @@
 <template>
   <main class="about">
     <vue-navbar color="black" />
-    <section class="section about-1">
+    <section data-a-o class="section about-1">
       <div class="container about-1__container">
         <div class="about-1__left">
           <vue-image prefix="about-1" url="/img/about.jpg" />

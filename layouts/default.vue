@@ -4,13 +4,16 @@
       <Nuxt />
       <div id="gl"></div>
     </div>
+    <vue-loader />
   </div>
 </template>
 
 <script>
 import emitter from 'tiny-emitter/instance'
+import vueLoader from '~/components/vue-loader'
 
 export default {
+  components: { vueLoader },
   async mounted() {
     const { default: supportsWebP } = await import('supports-webp')
 

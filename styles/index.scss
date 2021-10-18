@@ -56,3 +56,25 @@ body {
   @include coverdiv(fixed);
   pointer-events: none;
 }
+
+.js-hidden {
+  opacity: 0;
+  // visibility: hidden;
+}
+
+[data-a-bg] {
+  transform: scale(1.1);
+}
+
+[data-a-mask] {
+  opacity: 0;
+}
+
+[data-a-h] {
+  transform: translateY(100%);
+  transform-origin: bottom;
+}
+
+[data-a-o] {
+  opacity: 0;
+}

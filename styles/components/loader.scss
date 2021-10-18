@@ -1,0 +1,57 @@
+.loader {
+  width: 200%;
+  height: 200vh;
+  // @include coverdiv(fixed);
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  z-index: 1000000;
+  clip-path: ellipse(100% 100% at 15% 50%);
+  animation-name: loaderOut;
+  animation-duration: 2s;
+  animation-timing-function: cubic-bezier(0.91, 0.04, 0.45, 0.83);
+  animation-play-state: paused;
+  animation-fill-mode: forwards;
+}
+
+.loader__bg {
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  // clip-path: ellipse(100% 100% at 15% 50%);
+}
+
+.loader__logo {
+  width: vw(210);
+  svg {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@keyframes loaderOut {
+  0% {
+    clip-path: ellipse(100% 100% at 15% 50%);
+  }
+  100% {
+    clip-path: ellipse(100% 0% at 15% 50%);
+  }
+}
+
+@keyframes loaderIn {
+  0% {
+    clip-path: ellipse(100% 0% at 15% 50%);
+  }
+  100% {
+    clip-path: ellipse(100% 100% at 15% 50%);
+  }
+}

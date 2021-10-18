@@ -3,7 +3,7 @@
     <vue-navbar />
     <vue-hero image="/img/pr-hero.jpg">
       <div class="hero__h-wrapper">
-        <h1 class="h1 hero__h projects__h">Private Residential</h1>
+        <h1 data-a-h class="h1 hero__h projects__h">Private Residential</h1>
       </div>
     </vue-hero>
     <vue-masonry :items="getImages" @clickItem="openSlider" />
@@ -23,16 +23,11 @@ import VueFooter from '~/components/vue-footer.vue'
 import VueHero from '~/components/vue-hero.vue'
 import VueMasonry from '~/components/vue-masonry.vue'
 import transition from '~/mixins/transition.vue'
+import projects from '~/mixins/projects.vue'
 import { keysGenerator } from '~/scripts/utils/keysGenerator'
 export default {
   components: { VueHero, VueFooter, VueMasonry, SliderWindow },
-  mixins: [transition],
-  data() {
-    return {
-      isSliderOpen: false,
-      startFrom: 0,
-    }
-  },
+  mixins: [transition, projects],
   computed: {
     getImages() {
       const length = 18
@@ -57,16 +52,6 @@ export default {
         })
       }
       return images
-    },
-  },
-  methods: {
-    openSlider(idx = 0) {
-      this.startFrom = idx
-      this.isSliderOpen = true
-    },
-    closeSlider() {
-      this.startFrom = 0
-      this.isSliderOpen = false
     },
   },
 }

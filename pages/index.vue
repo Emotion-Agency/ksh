@@ -3,7 +3,7 @@
     <vue-navbar state="dir" />
     <vue-hero>
       <div class="hero__h-wrapper">
-        <h1 class="h1 hero__h">KSh DESIGN</h1>
+        <h1 data-a-h class="h1 hero__h">KSh DESIGN</h1>
       </div>
       <div class="hero__bottom-text">Ukraine</div>
     </vue-hero>

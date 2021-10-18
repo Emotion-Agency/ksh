@@ -24,6 +24,7 @@
 
 .grid__item {
   width: 33.3%;
+  cursor: pointer;
   padding-right: vw(20);
   padding-bottom: vw(20);
   @include media('<=#{$br3}') {

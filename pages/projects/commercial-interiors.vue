@@ -3,11 +3,17 @@
     <vue-navbar />
     <vue-hero image="/img/com-hero.jpg">
       <div class="hero__h-wrapper">
-        <h1 class="h1 hero__h projects__h">Commercial Interiors</h1>
+        <h1 data-a-h class="h1 hero__h projects__h">Commercial Interiors</h1>
       </div>
     </vue-hero>
-    <vue-masonry :items="getImages" />
+    <vue-masonry :items="getImages" @clickItem="openSlider" />
     <vue-footer image="/img/com-hero.jpg" />
+    <slider-window
+      :items="getImagesToSlider"
+      :is-open="isSliderOpen"
+      :start-from="startFrom"
+      @close="closeSlider"
+    />
   </div>
 </template>
 
@@ -16,13 +22,27 @@ import VueFooter from '~/components/vue-footer.vue'
 import VueHero from '~/components/vue-hero.vue'
 import VueMasonry from '~/components/vue-masonry.vue'
 import transition from '~/mixins/transition.vue'
+import projects from '~/mixins/projects.vue'
+
 import { keysGenerator } from '~/scripts/utils/keysGenerator'
 export default {
   components: { VueHero, VueFooter, VueMasonry },
-  mixins: [transition],
+  mixins: [transition, projects],
 
   computed: {
     getImages() {
+      const length = 18
+      const images = []
+
+      for (let i = 0; i < length; i++) {
+        images.push({
+          _id: keysGenerator(8),
+          img: `/img/pr/${i + 1}.jpg`,
+        })
+      }
+      return images
+    },
+    getImagesToSlider() {
       const length = 18
       const images = []
 

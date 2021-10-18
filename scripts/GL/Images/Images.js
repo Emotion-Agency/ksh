@@ -2,8 +2,6 @@ import gsap from 'gsap'
 import { lerp } from '@emotionagency/utils'
 import { Figure } from '@emotionagency/glhtml'
 
-import { FigureMouse } from './Figure.mouse'
-
 import fragment from './shaders/fragment.glsl'
 import vertex from './shaders/vertex.glsl'
 
@@ -12,8 +10,6 @@ export default class Images extends Figure {
   constructor(scene, renderer, $el) {
     super(scene, renderer, $el)
 
-    this.mouse = new FigureMouse(this)
-    this.mouse.addEvents()
     this.onMouseEnter = this.onMouseEnter.bind(this)
     this.onMouseLeave = this.onMouseLeave.bind(this)
     this.$el.addEventListener('mouseenter', this.onMouseEnter)
@@ -95,7 +91,7 @@ export default class Images extends Figure {
     gsap.to(this.material.uniforms.uScale, {
       duration: 1,
       value: 0.04,
-      ease: 'power2.out',
+      ease: 'power1.inOut',
     })
   }
 
@@ -133,7 +129,9 @@ export default class Images extends Figure {
   }
 
   destroy() {
-    this.mouse.removeEvents()
+    this.$el.removeEventListener('mouseenter', this.onMouseEnter)
+    this.$el.removeEventListener('mouseleave', this.onMouseLeave)
+
     this.disposeTexture(this.texture)
     super.destroy()
   }

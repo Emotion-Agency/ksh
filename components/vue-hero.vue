@@ -9,14 +9,24 @@
           class="hero__img parallax-img"
           data-section-parallax="-0.13"
           data-scale="1.07"
-          :style="{ backgroundImage: `url('${image}')` }"
-        ></div>
+        >
+          <div
+            class="hero__img-inner"
+            data-a-bg
+            :style="{ backgroundImage: `url('${image}')` }"
+          ></div>
+        </div>
         <div
           class="hero__img-mask parallax-img"
           data-section-parallax="-0.13"
           data-scale="1.07"
-          :style="{ backgroundImage: `url('${mask}')` }"
-        ></div>
+        >
+          <div
+            class="hero__mask-inner"
+            data-a-mask
+            :style="{ backgroundImage: `url('${mask}')` }"
+          ></div>
+        </div>
       </div>
     </div>
     <div class="container hero__container">
