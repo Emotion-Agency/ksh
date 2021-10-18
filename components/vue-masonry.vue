@@ -7,6 +7,7 @@
             class="grid__img js-gl-img"
             :src="item.img"
             :data-src="item.img"
+            data-gl-parallax="0"
             alt=""
           />
         </div>

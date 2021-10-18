@@ -13,13 +13,12 @@ uniform float uParallax;
 
 
 
-
 void main() {
   vec3 pos = position;
   vUv = bgCover(size, resolution, uv);
   vDUv = uv;
 
-  vParallax = parallax(uOffsetY, uScrollHeight, 1.);
+  vParallax = parallax(uOffsetY, uScrollHeight, uParallax);
 
   vec4 newPosition = modelViewMatrix * vec4(pos, 1.0);
 

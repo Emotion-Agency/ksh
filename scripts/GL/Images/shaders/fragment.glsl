@@ -9,11 +9,13 @@ uniform float uVisible;
 
 vec4 tex(in vec2 st) { return texture2D(uTexture, st); }
 
-
-
 void main() {
 
     vec2 uv = vUv;
+
+    uv-= 0.5;
+    uv*= 0.95;
+    uv+= 0.5;
 
     uv.y += vParallax;
 
@@ -26,6 +28,7 @@ void main() {
    }
 
 	vec2 newUv = uv;
+
 
 	newUv+= (sin(newUv.y*10. + (uTime / 5.)) / 500.) * (uStrength* 0.15);
 	newUv+= (sin(newUv.x*10. + (uTime / 15.)) / 500.) * (uStrength * 0.15);

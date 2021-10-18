@@ -12,20 +12,26 @@
         <div class="home-2__images">
           <div class="home-2__image-wrapper">
             <div
-              class="home-2__img"
+              class="home-2__img js-gl-img"
               style="background-image: url('/img/comm-1.jpg')"
+              data-src="/img/comm-1.jpg"
+              data-gl-parallax="1"
             ></div>
           </div>
           <div class="home-2__image-wrapper">
             <div
-              class="home-2__img"
+              class="home-2__img js-gl-img"
               style="background-image: url('/img/comm-2.jpg')"
+              data-src="/img/comm-2.jpg"
+              data-gl-parallax="1"
             ></div>
           </div>
           <div class="home-2__image-wrapper">
             <div
-              class="home-2__img"
+              class="home-2__img js-gl-img"
               style="background-image: url('/img/comm-3.jpg')"
+              data-src="/img/comm-3.jpg"
+              data-gl-parallax="1"
             ></div>
           </div>
         </div>
@@ -60,6 +66,7 @@
               class="home-3__img js-gl-img"
               style="background-image: url('/img/home-3.jpg')"
               data-src="/img/home-3.jpg"
+              data-gl-parallax="1"
             ></div>
           </div>
         </div>

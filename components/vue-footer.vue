@@ -55,7 +55,7 @@
         <a href="/" class="footer__privacy">
           © 2021. KSh design / Privacy Policy
         </a>
-        <button aria-label="go top" class="footer__go-top">
+        <button aria-label="go top" class="footer__go-top" @click="goTop">
           <svg
             width="28"
             height="29"
@@ -89,6 +89,7 @@
 </template>
 
 <script>
+import gsap from 'gsap'
 export default {
   props: {
     image: {
@@ -122,6 +123,10 @@ export default {
       const { FooterOnScroll } = await import('~/scripts/FooterOnScroll')
 
       this.fos = new FooterOnScroll(this.$refs.footer)
+    },
+    goTop() {
+      gsap.to(window.ss.state, { duration: 0.5, target: 0 })
+      this.closeFooter()
     },
   },
 }

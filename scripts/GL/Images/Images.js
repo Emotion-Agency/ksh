@@ -39,7 +39,7 @@ export default class Images extends Figure {
       uScrollHeight: { value: 0 },
       uOffsetY: { value: 0 },
       uVisible: { value: 1 },
-      uParallax: { value: 0 },
+      uParallax: { value: +this.$el.dataset.glParallax },
     }
 
     super.createMaterial({ uniforms, vertex, fragment })
