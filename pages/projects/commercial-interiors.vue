@@ -18,8 +18,6 @@
 </template>
 
 <script>
-import ImgixClient from '@imgix/js-core'
-
 import VueFooter from '~/components/vue-footer.vue'
 import VueHero from '~/components/vue-hero.vue'
 import VueMasonry from '~/components/vue-masonry.vue'
@@ -28,11 +26,7 @@ import projects from '~/mixins/projects.vue'
 
 import { keysGenerator } from '~/scripts/utils/keysGenerator'
 import { transformImage } from '~/scripts/utils/storyblokImage'
-
-const client = new ImgixClient({
-  domain: 'emotionagency.imgix.net',
-  secureURLToken: 'PsyzrT84uSgZUXFA',
-})
+import { imgix } from '~/scripts/imgix'
 
 export default {
   components: { VueHero, VueFooter, VueMasonry },
@@ -52,7 +46,7 @@ export default {
     getImages() {
       return this.storyblok.body[0].images.map(img => ({
         _id: keysGenerator(8),
-        img: client.buildURL(
+        img: imgix.buildURL(
           transformImage(
             img.preview_image.filename,
             'filters:quality(92):format(webp)'
