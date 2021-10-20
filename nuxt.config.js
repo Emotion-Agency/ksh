@@ -83,5 +83,5 @@ export default {
       })
     },
   },
-  // generate: { fallback: '404.html' },
+  generate: { fallback: true },
 }
