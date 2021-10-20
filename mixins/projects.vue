@@ -7,7 +7,7 @@ export default {
   asyncData(context) {
     return context.app.$storyapi
       .get(`cdn/stories${context.route.path}`, {
-        version: 'draft',
+        version: process.env.NODE_ENV === 'production' ? 'published' : 'draft',
       })
       .then(res => {
         return { storyblok: res.data.story.content }
