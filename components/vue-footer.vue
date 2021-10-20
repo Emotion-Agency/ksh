@@ -30,17 +30,23 @@
         <div class="f-b__col f-b__col--1">
           <ul class="f-b__items">
             <li data-c="01" class="f-b__item">
-              <a href="/" class="f-b__link">Tel: +38 (066) 017 7097</a>
+              <a
+                :href="`tel:${story.phone.replace(/\D/gm, '')}`"
+                class="f-b__link"
+                >Tel: {{ story.phone }}</a
+              >
             </li>
             <li data-c="02" class="f-b__item">
-              <a href="/" class="f-b__link">kshofficedesign@gmail.com</a>
+              <a :href="`mailto:${story.email}`" class="f-b__link">{{
+                story.email
+              }}</a>
             </li>
           </ul>
         </div>
         <div class="f-b__col f-b__col--2">
           <ul class="f-b__items">
             <li data-c="03" class="f-b__item">
-              <a href="/" class="f-b__link">Instagram</a>
+              <a :href="story.instagram" class="f-b__link">Instagram</a>
             </li>
           </ul>
         </div>
@@ -105,6 +111,21 @@ export default {
     return {
       isOpen: false,
     }
+  },
+  async fetch() {
+    const data = await this.$storyapi
+      .get('cdn/stories/contacts', {
+        version: 'draft',
+      })
+      .then(res => {
+        return res.data.story.content
+      })
+    this.$store.commit('footer/setContent', data)
+  },
+  computed: {
+    story() {
+      return this.$store.state.footer.content
+    },
   },
   async mounted() {
     await this.initFooterAnimation()

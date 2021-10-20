@@ -15,6 +15,7 @@
     "@emotionagency/smoothscroll": "^0.1.6",
     "@emotionagency/utils": "^0.0.7",
     "@imgix/js-core": "^3.2.1",
+    "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/pwa": "^3.3.5",
     "axios": "^0.23.0",
     "core-js": "^3.9.1",

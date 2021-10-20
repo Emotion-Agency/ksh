@@ -24,47 +24,9 @@ import VueMasonry from '~/components/vue-masonry.vue'
 import transition from '~/mixins/transition.vue'
 import projects from '~/mixins/projects.vue'
 
-import { keysGenerator } from '~/scripts/utils/keysGenerator'
-import { transformImage } from '~/scripts/utils/storyblokImage'
-import { imgix } from '~/scripts/imgix'
-
 export default {
   components: { VueHero, VueFooter, VueMasonry },
   mixins: [transition, projects],
-
-  asyncData(context) {
-    return context.app.$storyapi
-      .get('cdn/stories/projects/commercial-interiors', {
-        version: 'draft',
-      })
-      .then(res => {
-        return { storyblok: res.data.story.content }
-      })
-  },
-
-  computed: {
-    getImages() {
-      return this.storyblok.body[0].images.map(img => ({
-        _id: keysGenerator(8),
-        img: imgix.buildURL(
-          transformImage(
-            img.preview_image.filename,
-            'filters:quality(92):format(webp)'
-          ),
-          {}
-        ),
-      }))
-    },
-    getImagesToSlider() {
-      return this.storyblok.body[0].images.map(img => ({
-        _id: keysGenerator(8),
-        img: transformImage(
-          img.big_image.filename,
-          'filters:quality(92):format(webp)'
-        ),
-      }))
-    },
-  },
 }
 </script>
 

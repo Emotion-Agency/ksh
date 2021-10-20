@@ -39,6 +39,7 @@ export default {
       friction: 0.03,
       stepSize: 0.9,
       scrollbar: true,
+      useKeyboard: false,
       raf,
     })
 
