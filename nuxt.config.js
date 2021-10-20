@@ -9,6 +9,15 @@ export default {
     host: '0.0.0.0',
   },
 
+  image: {
+    storyblok: {
+      baseURL: 'https://img2.storyblok.com',
+    },
+    imgix: {
+      baseURL: 'https://emotionagency.imgix.net',
+    },
+  },
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'KSh Design',
@@ -33,12 +42,20 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
+    '@nuxt/image',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    [
+      'storyblok-nuxt',
+      {
+        accessToken: 'ZhraDgmpgqbSFgi6mDLomAtt',
+        cacheProvider: 'memory',
+      },
+    ],
   ],
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
