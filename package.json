@@ -17,7 +17,6 @@
     "@imgix/js-core": "^3.2.1",
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/pwa": "^3.3.5",
-    "@nuxtjs/vercel-builder": "^0.22.1",
     "axios": "^0.23.0",
     "core-js": "^3.9.1",
     "gsap": "^3.6.0",
