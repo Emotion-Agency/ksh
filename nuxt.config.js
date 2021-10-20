@@ -9,10 +9,10 @@ export default {
   ssr: true,
   target: 'server',
 
-  server: {
-    port: '3000',
-    host: '0.0.0.0',
-  },
+  // server: {
+  //   port: '3000',
+  //   host: '0.0.0.0',
+  // },
 
   image: {
     storyblok: {
