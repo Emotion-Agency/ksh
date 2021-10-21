@@ -85,9 +85,35 @@ import VueNavbar from '~/components/vue-navbar.vue'
 import VueTicker from '~/components/vue-ticker.vue'
 import VueFooter from '~/components/vue-footer.vue'
 import transition from '~/mixins/transition.vue'
+
+const TITLE = 'KSH Design Buro | Private Residential and Commercial Interiors'
+const DESCRIPTION =
+  'We create interior design and architecture. We work in two directions: private residences and commercial interiors. From the development of layout and rough sketch to designing one-off home decor items'
+
 export default {
   components: { VueNavbar, VueTicker, VueBtn, VueHero, VueFooter },
   mixins: [transition],
+
+  head: {
+    title: TITLE,
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: DESCRIPTION,
+      },
+      {
+        hid: 'og:title',
+        name: 'og:title',
+        content: TITLE,
+      },
+      {
+        hid: 'og:description',
+        name: 'og:title',
+        content: DESCRIPTION,
+      },
+    ],
+  },
 
   async mounted() {
     const { initImages } = await import('~/scripts/GL/Images/init')
