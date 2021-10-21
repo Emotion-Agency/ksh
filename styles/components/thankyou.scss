@@ -37,14 +37,24 @@
   align-items: center;
   flex-direction: column;
   color: var(--black);
+  text-align: center;
   padding: 40px;
+  @include media('<=#{$br1}') {
+    max-width: 90vw;
+  }
 }
 .ty__h {
   @include h;
   font-size: vw(32);
+  @include media('<=#{$br1}') {
+    font-size: 28px;
+  }
 }
 .ty__t {
   margin-top: vw(32);
+  @include media('<=#{$br1}') {
+    margin-top: 20px;
+  }
 }
 
 .ty-window__close {
