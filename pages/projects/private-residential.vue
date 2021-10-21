@@ -24,35 +24,9 @@ import VueHero from '~/components/vue-hero.vue'
 import VueMasonry from '~/components/vue-masonry.vue'
 import transition from '~/mixins/transition.vue'
 import projects from '~/mixins/projects.vue'
-import { keysGenerator } from '~/scripts/utils/keysGenerator'
+
 export default {
   components: { VueHero, VueFooter, VueMasonry, SliderWindow },
   mixins: [transition, projects],
-  computed: {
-    getImages() {
-      const length = 18
-      const images = []
-
-      for (let i = 0; i < length; i++) {
-        images.push({
-          _id: keysGenerator(8),
-          img: `/img/pr/${i + 1}.jpg`,
-        })
-      }
-      return images
-    },
-    getImagesToSlider() {
-      const length = 18
-      const images = []
-
-      for (let i = 0; i < length; i++) {
-        images.push({
-          _id: keysGenerator(8),
-          img: `/img/pr/${i + 1}.jpg`,
-        })
-      }
-      return images
-    },
-  },
 }
 </script>

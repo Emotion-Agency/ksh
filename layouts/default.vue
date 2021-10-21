@@ -5,15 +5,17 @@
       <div id="gl"></div>
     </div>
     <vue-loader />
+    <vue-thankyou />
   </div>
 </template>
 
 <script>
 import emitter from 'tiny-emitter/instance'
 import vueLoader from '~/components/vue-loader'
+import vueThankyou from '~/components/vue-thankyou'
 
 export default {
-  components: { vueLoader },
+  components: { vueLoader, vueThankyou },
   async mounted() {
     const { default: supportsWebP } = await import('supports-webp')
 
@@ -39,6 +41,7 @@ export default {
       friction: 0.03,
       stepSize: 0.9,
       scrollbar: true,
+      useKeyboard: false,
       raf,
     })
 

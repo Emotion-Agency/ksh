@@ -16,7 +16,7 @@ export default {
       },
       leave(_, done) {
         window.ss && (window.ss.isFixed = true)
-        loaderAnimation().animateIn(done)
+        loaderAnimation(2, 1).animateIn(done)
       },
     }
   },

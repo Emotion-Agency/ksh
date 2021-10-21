@@ -23,7 +23,6 @@
 
 <script>
 import emitter from 'tiny-emitter/instance'
-
 import imagesLoaded from 'imagesloaded'
 export default {
   props: {
@@ -60,4 +59,5 @@ export default {
     },
   },
 }
+//
 </script>

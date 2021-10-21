@@ -1,12 +1,24 @@
 import { fi } from './gulp-src/fonts-include.js'
 
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 export default {
-  // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
   server: {
     port: '3000',
     host: '0.0.0.0',
+  },
+
+  image: {
+    storyblok: {
+      baseURL: 'https://img2.storyblok.com',
+    },
+    imgix: {
+      baseURL: 'https://emotionagency.imgix.net',
+    },
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -39,6 +51,14 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    [
+      'storyblok-nuxt',
+      {
+        accessToken: process.env.STORYBLOK_KEY,
+        cacheProvider: 'memory',
+      },
+    ],
+    ['@nuxtjs/dotenv', { filename: `.env.${process.env.NODE_ENV}` }],
   ],
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
@@ -62,5 +82,5 @@ export default {
       })
     },
   },
-  // generate: { fallback: '404.html' },
+  generate: { fallback: true },
 }

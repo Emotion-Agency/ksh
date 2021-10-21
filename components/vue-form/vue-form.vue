@@ -27,7 +27,7 @@
 <script>
 import vueInput from './vue-input.vue'
 
-const URL = 'https://emotion-agency.com/drafts/icsmt-api/mail/mail.php'
+const URL = 'https://emotion-agency.com/drafts/ksh-api/mail/mail.php'
 
 export default {
   components: { vueInput },
@@ -81,11 +81,10 @@ export default {
 
       try {
         this.$store.commit('app/setLoading', true)
-        const res = await fetch(URL, {
+        await fetch(URL, {
           method: 'POST',
           body: formData,
         })
-        console.log(res)
         this.showThankyou()
         this.resetForm()
       } catch (error) {
@@ -110,7 +109,7 @@ export default {
       this.error = false
     },
     showThankyou() {
-      this.$emit('showThankyou')
+      this.$store.commit('app/setPopup', true)
     },
   },
 }
