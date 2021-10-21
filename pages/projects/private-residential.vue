@@ -25,8 +25,33 @@ import VueMasonry from '~/components/vue-masonry.vue'
 import transition from '~/mixins/transition.vue'
 import projects from '~/mixins/projects.vue'
 
+const TITLE = 'Private Residential | KSh Design Buro'
+const DESCRIPTION =
+  'This section presents our projects in the field of Residential Interiors. We create an interior design according to the wishes of the customer and the best solutions in the field of residential interiors. We work with customers all over the world'
+
 export default {
   components: { VueHero, VueFooter, VueMasonry, SliderWindow },
   mixins: [transition, projects],
+
+  head: {
+    title: TITLE,
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: DESCRIPTION,
+      },
+      {
+        hid: 'og:title',
+        name: 'og:title',
+        content: TITLE,
+      },
+      {
+        hid: 'og:description',
+        name: 'og:title',
+        content: DESCRIPTION,
+      },
+    ],
+  },
 }
 </script>

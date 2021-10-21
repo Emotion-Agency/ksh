@@ -65,8 +65,34 @@ import VueFooter from '~/components/vue-footer.vue'
 import VueImage from '~/components/vue-image.vue'
 import VueNavbar from '~/components/vue-navbar.vue'
 import transition from '~/mixins/transition.vue'
+
+const TITLE = 'About | KSh Design Buro'
+const DESCRIPTION =
+  'We are a team of experienced designers and architects. Our main specialization is the creation of individual interiors for residential and commercial real estate'
+
 export default {
   components: { VueNavbar, VueImage, VueFooter },
   mixins: [transition],
+
+  head: {
+    title: TITLE,
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: DESCRIPTION,
+      },
+      {
+        hid: 'og:title',
+        name: 'og:title',
+        content: TITLE,
+      },
+      {
+        hid: 'og:description',
+        name: 'og:title',
+        content: DESCRIPTION,
+      },
+    ],
+  },
 }
 </script>

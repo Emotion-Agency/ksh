@@ -23,12 +23,37 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'KSh Design',
     meta: [
-      { charset: 'utf-8' },
+      { charset: 'utf-8', hid: 'charset' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
+      { name: 'twitter:card', content: 'summary_large_image' },
+      {
+        name: 'twitter:title',
+        content:
+          'KSH Design Buro | Private Residential and Commercial Interiors',
+      },
+      {
+        name: 'twitter:description',
+        content:
+          'We create interior design and architecture. We work in two directions: private residences and commercial interiors. From the development of layout and rough sketch to designing one-off home decor items',
+      },
+      {
+        name: 'twitter:image',
+        content: '/twitter.png',
+      },
+      {
+        property: 'og:image',
+        content: '/twitter.png',
+      },
+      {
+        hid: 'og:site_name',
+        property: 'og:site_name',
+        content: 'KSh Design',
+      },
+      { hid: 'theme-color', name: 'theme-color', content: '#221E1D' },
     ],
+    title: 'KSH Design Buro | Private Residential and Commercial Interiors',
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }, ...fi],
   },
 
