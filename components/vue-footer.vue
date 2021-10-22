@@ -6,16 +6,8 @@
   >
     <div class="hero__images-container" @click.stop="closeFooter">
       <div class="hero__images-wrapper">
-        <div
-          data-footer-image
-          class="hero__img"
-          :style="{ backgroundImage: `url('${image}')` }"
-        ></div>
-        <div
-          data-footer-mask
-          class="hero__img-mask"
-          :style="{ backgroundImage: `url('${mask}')` }"
-        ></div>
+        <vue-img data-footer-image class="hero__img" :url="image"></vue-img>
+        <vue-img data-footer-mask class="hero__img-mask" :url="mask"></vue-img>
       </div>
     </div>
     <div class="container hero__container" @click.stop="closeFooter">
@@ -96,7 +88,9 @@
 
 <script>
 import gsap from 'gsap'
+import vueImg from './vue-img.vue'
 export default {
+  components: { vueImg },
   props: {
     image: {
       type: String,

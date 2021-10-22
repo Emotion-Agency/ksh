@@ -19,7 +19,7 @@
       .burger__line {
         background-color: var(--black);
       }
-      .nav__link {
+      .nav__link:not(.dropdown__link) {
         &::after {
           background-color: var(--black);
         }

@@ -10,22 +10,14 @@
           data-section-parallax="-0.13"
           data-scale="1.07"
         >
-          <div
-            class="hero__img-inner"
-            data-a-bg
-            :style="{ backgroundImage: `url('${image}')` }"
-          ></div>
+          <vue-img class="hero__img-inner" data-a-bg :url="image"></vue-img>
         </div>
         <div
           class="hero__img-mask parallax-img"
           data-section-parallax="-0.13"
           data-scale="1.07"
         >
-          <div
-            class="hero__mask-inner"
-            data-a-mask
-            :style="{ backgroundImage: `url('${mask}')` }"
-          ></div>
+          <vue-img class="hero__mask-inner" data-a-mask :url="mask"></vue-img>
         </div>
       </div>
     </div>
@@ -36,7 +28,11 @@
 </template>
 
 <script>
+import VueImg from '~/components/vue-img.vue'
+
 export default {
+  components: { VueImg },
+
   props: {
     image: {
       type: String,

@@ -17,8 +17,17 @@ export default {
     },
   },
   computed: {
+    getWebpUrl() {
+      const reg = /\.(jpe?g|png)/gm
+      const ext = '.webp'
+
+      return this.url.replace(reg, '') + ext
+    },
+
     fullUrl() {
-      return `background-image: url(${this.url})`
+      const url = this.$store.state.app.isWebp ? this.getWebpUrl : this.url
+
+      return `background-image: url(${url})`
     },
   },
 }

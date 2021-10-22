@@ -11,20 +11,20 @@
       <div class="home-2__content">
         <div class="home-2__images">
           <div class="home-2__image-wrapper">
-            <div
+            <vue-img
               class="home-2__img js-gl-img"
-              style="background-image: url('/img/comm-1.jpg')"
+              url="/img/comm-1.jpg"
               data-src="/img/comm-1.jpg"
               data-gl-parallax="1"
-            ></div>
+            ></vue-img>
           </div>
           <div class="home-2__image-wrapper">
-            <div
+            <vue-img
               class="home-2__img js-gl-img"
-              style="background-image: url('/img/comm-2.jpg')"
+              url="/img/comm-2.jpg"
               data-src="/img/comm-2.jpg"
               data-gl-parallax="1"
-            ></div>
+            ></vue-img>
           </div>
           <div class="home-2__image-wrapper">
             <div
@@ -84,6 +84,7 @@ import VueHero from '~/components/vue-hero.vue'
 import VueNavbar from '~/components/vue-navbar.vue'
 import VueTicker from '~/components/vue-ticker.vue'
 import VueFooter from '~/components/vue-footer.vue'
+import VueImg from '~/components/vue-img.vue'
 import transition from '~/mixins/transition.vue'
 
 const TITLE = 'KSH Design Buro | Private Residential and Commercial Interiors'
@@ -91,7 +92,7 @@ const DESCRIPTION =
   'We create interior design and architecture. We work in two directions: private residences and commercial interiors. From the development of layout and rough sketch to designing one-off home decor items'
 
 export default {
-  components: { VueNavbar, VueTicker, VueBtn, VueHero, VueFooter },
+  components: { VueNavbar, VueTicker, VueBtn, VueHero, VueFooter, VueImg },
   mixins: [transition],
 
   head: {
