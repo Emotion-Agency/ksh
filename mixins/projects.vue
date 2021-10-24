@@ -7,7 +7,7 @@ export default {
   asyncData(context) {
     return context.app.$storyapi
       .get(`cdn/stories${context.route.path}`, {
-        version: process.env.NODE_ENV === 'production' ? 'published' : 'draft',
+        version: 'draft',
       })
       .then(res => {
         return res.data
@@ -61,11 +61,9 @@ export default {
             }
           } else {
             window.location.reload()
-            setTimeout(() => {
-              if (event.story.id === this.story.id) {
-                this.story.content = event.story.content
-              }
-            }, 1000)
+            if (event.story.id === this.story.id) {
+              this.story.content = event.story.content
+            }
           }
         })
       },

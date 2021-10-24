@@ -32,6 +32,12 @@ export default {
     },
   },
 
+  watch: {
+    items() {
+       this.masonry.needsResizeLayout()
+    }
+  },
+
   async mounted() {
     const { default: Masonry } = await import('masonry-layout')
     const { delayPromise } = await import('~/scripts/utils/delay')
@@ -39,7 +45,7 @@ export default {
 
     await delayPromise(100)
     imagesLoaded(document.querySelector('.masonry'), () => {
-      new Masonry(elem, {
+      this.masonry = new Masonry(elem, {
         // options
         itemSelector: '.grid__item',
       })
