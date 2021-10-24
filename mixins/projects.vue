@@ -61,6 +61,9 @@ export default {
             }
           } else {
             window.location.reload()
+            if (event.story.id === this.story.id) {
+              this.story.content = event.story.content
+            }
           }
         })
       },
