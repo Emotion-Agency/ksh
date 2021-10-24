@@ -109,7 +109,7 @@ export default {
   async fetch() {
     const data = await this.$storyapi
       .get('cdn/stories/contacts', {
-        version: process.env.NODE_ENV === 'production' ? 'published' : 'draft',
+        version: 'draft',
       })
       .then(res => {
         return res.data.story.content

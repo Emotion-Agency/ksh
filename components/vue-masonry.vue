@@ -32,12 +32,6 @@ export default {
     },
   },
 
-  watch: {
-    items() {
-       this.masonry.needsResizeLayout()
-    }
-  },
-
   async mounted() {
     const { default: Masonry } = await import('masonry-layout')
     const { delayPromise } = await import('~/scripts/utils/delay')
