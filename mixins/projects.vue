@@ -10,7 +10,7 @@ export default {
         version: process.env.NODE_ENV === 'production' ? 'published' : 'draft',
       })
       .then(res => {
-        return { storyblok: res.data.story.content }
+        return res.data
       })
   },
 
@@ -18,6 +18,7 @@ export default {
     return {
       isSliderOpen: false,
       startFrom: 0,
+      story: { content: {} },
     }
   },
 
@@ -28,7 +29,7 @@ export default {
         : 'filters:quality(92)'
     },
     getImages() {
-      return this.storyblok.body[0].images.map(img => ({
+      return this.story.content.body[0].images.map(img => ({
         _id: keysGenerator(8),
         img: imgix.buildURL(
           transformImage(img.preview_image.filename, this.getFilters),
@@ -37,7 +38,7 @@ export default {
       }))
     },
     getImagesToSlider() {
-      return this.storyblok.body[0].images.map(img => ({
+      return this.story.content.body[0].images.map(img => ({
         _id: keysGenerator(8),
         img: transformImage(
           img.big_image.filename,
@@ -45,6 +46,28 @@ export default {
         ),
       }))
     },
+  },
+
+  mounted() {
+    this.$storybridge(
+      () => {
+        // eslint-disable-next-line no-undef
+        const storyblokInstance = new StoryblokBridge()
+
+        storyblokInstance.on(['input', 'published', 'change'], event => {
+          if (event.action === 'input') {
+            if (event.story.id === this.story.id) {
+              this.story.content = event.story.content
+            }
+          } else {
+            window.location.reload()
+          }
+        })
+      },
+      error => {
+        console.error(error)
+      }
+    )
   },
 
   methods: {

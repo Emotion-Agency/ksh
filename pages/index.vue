@@ -30,8 +30,9 @@
             <div
               class="home-2__img js-gl-img"
               style="background-image: url('/img/comm-3.jpg')"
-              data-src="/img/comm-3.jpg"
+              data-gl
               data-gl-parallax="1"
+              data-src="/img/comm-3.jpg"
             ></div>
           </div>
         </div>
