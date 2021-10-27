@@ -32,6 +32,18 @@ export default {
     },
   },
 
+  // watch: {
+  //   async items() {
+  //     const { default: Masonry } = await import('masonry-layout')
+  //     const elem = document.querySelector('.grid')
+  //     console.log(this.items)
+  //     this.masonry = new Masonry(elem, {
+  //       // options
+  //       itemSelector: '.grid__item',
+  //     })
+  //   },
+  // },
+
   async mounted() {
     const { default: Masonry } = await import('masonry-layout')
     const { delayPromise } = await import('~/scripts/utils/delay')
