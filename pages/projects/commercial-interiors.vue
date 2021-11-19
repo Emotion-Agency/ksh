@@ -7,7 +7,7 @@
       </div>
     </vue-hero>
     <vue-masonry :items="getImages" @clickItem="openSlider" />
-    <vue-footer image="/img/com-hero.jpg" />
+    <vue-footer image="/img/com-hero.jpg" mask="/img/home-mask.png" />
     <slider-window
       :items="getImagesToSlider"
       :is-open="isSliderOpen"
