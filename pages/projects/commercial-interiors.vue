@@ -1,13 +1,21 @@
 <template>
   <div class="projects">
     <vue-navbar />
-    <vue-hero image="/img/com-hero.jpg">
+    <vue-hero
+      :image="getHeroImages.image"
+      :mask="getHeroImages.mask"
+      :webp="false"
+    >
       <div class="hero__h-wrapper">
         <h1 data-a-h class="h1 hero__h projects__h">Commercial Interiors</h1>
       </div>
     </vue-hero>
     <vue-masonry :items="getImages" @clickItem="openSlider" />
-    <vue-footer image="/img/com-hero.jpg" mask="/img/home-mask.png" />
+    <vue-footer
+      :image="getFooterImages.image"
+      :mask="getFooterImages.mask"
+      :webp="false"
+    />
     <slider-window
       :items="getImagesToSlider"
       :is-open="isSliderOpen"

@@ -6,8 +6,18 @@
   >
     <div class="hero__images-container" @click.stop="closeFooter">
       <div class="hero__images-wrapper">
-        <vue-img data-footer-image class="hero__img" :url="image"></vue-img>
-        <vue-img data-footer-mask class="hero__img-mask" :url="mask"></vue-img>
+        <vue-img
+          data-footer-image
+          class="hero__img"
+          :url="image"
+          :webp="webp"
+        ></vue-img>
+        <vue-img
+          data-footer-mask
+          class="hero__img-mask"
+          :url="mask"
+          :webp="webp"
+        ></vue-img>
       </div>
     </div>
     <div class="container hero__container" @click.stop="closeFooter">
@@ -99,6 +109,10 @@ export default {
     mask: {
       type: String,
       default: '/img/footer-mask.png',
+    },
+    webp: {
+      type: Boolean,
+      default: true,
     },
   },
   data() {

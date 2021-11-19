@@ -9,6 +9,10 @@ export default {
       type: String,
       default: '',
     },
+    webp: {
+      type: Boolean,
+      default: true,
+    },
   },
 
   computed: {
@@ -20,7 +24,11 @@ export default {
     },
 
     fullUrl() {
-      return this.$store.state.app.isWebp ? this.getWebpUrl : this.url
+      if (this.webp) {
+        return this.$store.state.app.isWebp ? this.getWebpUrl : this.url
+      } else {
+        return this.url
+      }
     },
   },
 }

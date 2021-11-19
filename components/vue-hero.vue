@@ -10,14 +10,24 @@
           data-section-parallax="-0.13"
           data-scale="1.07"
         >
-          <vue-img class="hero__img-inner" data-a-bg :url="image"></vue-img>
+          <vue-img
+            class="hero__img-inner"
+            data-a-bg
+            :url="image"
+            :webp="webp"
+          ></vue-img>
         </div>
         <div
           class="hero__img-mask parallax-img"
           data-section-parallax="-0.13"
           data-scale="1.07"
         >
-          <vue-img class="hero__mask-inner" data-a-mask :url="mask"></vue-img>
+          <vue-img
+            class="hero__mask-inner"
+            data-a-mask
+            :url="mask"
+            :webp="webp"
+          ></vue-img>
         </div>
       </div>
     </div>
@@ -41,6 +51,10 @@ export default {
     mask: {
       type: String,
       default: '/img/home-mask.png',
+    },
+    webp: {
+      type: Boolean,
+      default: true,
     },
   },
 }

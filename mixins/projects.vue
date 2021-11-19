@@ -1,9 +1,11 @@
 <script>
+import storybridge from './storybridge.vue'
 import { keysGenerator } from '~/scripts/utils/keysGenerator'
 import { transformImage } from '~/scripts/utils/storyblokImage'
 import { imgix } from '~/scripts/imgix'
 
 export default {
+  mixins: [storybridge],
   asyncData(context) {
     return context.app.$storyapi
       .get(`cdn/stories${context.route.path}`, {
@@ -46,33 +48,31 @@ export default {
         ),
       }))
     },
-  },
-
-  mounted() {
-    this.$storybridge(
-      () => {
-        // eslint-disable-next-line no-undef
-        const storyblokInstance = new StoryblokBridge()
-
-        storyblokInstance.on(['input', 'published', 'change'], event => {
-          if (event.action === 'input') {
-            if (event.story.id === this.story.id) {
-              this.story.content = event.story.content
-            }
-          } else {
-            window.location.reload()
-            setTimeout(() => {
-              if (event.story.id === this.story.id) {
-                this.story.content = event.story.content
-              }
-            }, 1000)
-          }
-        })
-      },
-      error => {
-        console.log(error)
+    getHeroImages() {
+      return {
+        image: transformImage(
+          this.story.content.hero_images[0].image.filename,
+          this.getFilters
+        ),
+        mask: transformImage(
+          this.story.content.hero_images[0].mask.filename,
+          this.getFilters
+        ),
       }
-    )
+    },
+
+    getFooterImages() {
+      return {
+        image: transformImage(
+          this.story.content.footer_images[0].image.filename,
+          this.getFilters
+        ),
+        mask: transformImage(
+          this.story.content.footer_images[0].mask.filename,
+          this.getFilters
+        ),
+      }
+    },
   },
 
   methods: {
