@@ -27,7 +27,7 @@
 <script>
 import vueInput from './vue-input.vue'
 
-const URL = 'https://emotion-agency.com/drafts/ksh-api/mail/mail.php'
+const URL = 'https://service.emotion-agency.com/ksh-api/mail/mail.php'
 
 export default {
   components: { vueInput },
