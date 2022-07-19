@@ -4,7 +4,10 @@
     class="section hero footer"
     :class="[isOpen && 'footer--open']"
   >
-    <div class="hero__images-container" @click.stop="closeFooter">
+    <div
+      class="hero__images-container"
+      @click.stop="closeFooter"
+    >
       <div class="hero__images-wrapper">
         <vue-img
           data-footer-image
@@ -20,9 +23,15 @@
         ></vue-img>
       </div>
     </div>
-    <div class="container hero__container" @click.stop="closeFooter">
+    <div
+      class="container hero__container"
+      @click.stop="closeFooter"
+    >
       <div class="hero__h-wrapper">
-        <button class="h1 footer__h" @click.stop="openFooter">
+        <button
+          class="h1 footer__h"
+          @click.stop="openFooter"
+        >
           Contact us
         </button>
       </div>
@@ -30,25 +39,78 @@
     <div class="container footer__container footer__bottom f-b">
       <div class="f-b__inner">
         <div class="f-b__col f-b__col--1">
+          <div
+            class="f-b__item-names"
+            @mouseleave="highlightNumber(0)"
+          >
+            <a
+              :href="`tel:${story.phone.replace(/\D/gm, '')}`"
+              class="f-b__item-name"
+              @mouseenter="highlightNumber(1)"
+            >{{ story.name }}</a> <span>/</span>
+            <a
+              :href="`tel:${story.phone_2.replace(/\D/gm, '')}`"
+              class="f-b__item-name"
+              @mouseenter="highlightNumber(2)"
+            >{{ story.name_2 }}</a> <span>/</span>
+            <a
+              :href="`tel:${story.phone_3.replace(/\D/gm, '')}`"
+              class="f-b__item-name"
+              @mouseenter="highlightNumber(3)"
+            >{{ story.name_3 }}</a>
+          </div>
           <ul class="f-b__items">
-            <li data-c="01" class="f-b__item">
-              <a
-                :href="`tel:${story.phone.replace(/\D/gm, '')}`"
-                class="f-b__link"
-                >Tel: {{ story.phone }}</a
-              >
+            <li
+              data-c="01"
+              class="f-b__item"
+            >
+              <div class="f-b__item-inner">
+
+                <a
+                  :href="`tel:${story.phone.replace(/\D/gm, '')}`"
+                  class="f-b__link"
+                  :class="[currentIdx === 1 && 'active']"
+                >Tel: {{ story.phone }}</a>
+
+
+                <a
+                  :href="`tel:${story.phone_2.replace(/\D/gm, '')}`"
+                  class="f-b__link"
+                  :class="[currentIdx === 2 && 'active']"
+                >Tel: {{ story.phone_2 }}</a>
+
+
+
+                <a
+                  :href="`tel:${story.phone_3.replace(/\D/gm, '')}`"
+                  class="f-b__link"
+                  :class="[currentIdx === 3 && 'active']"
+                >Tel: {{ story.phone_3 }}</a>
+              </div>
             </li>
-            <li data-c="02" class="f-b__item">
-              <a :href="`mailto:${story.email}`" class="f-b__link">{{
-                story.email
+            <li
+              data-c="02"
+              class="f-b__item"
+            >
+              <a
+                :href="`mailto:${story.email}`"
+                class="f-b__link"
+              >{{
+                  story.email
               }}</a>
             </li>
           </ul>
         </div>
         <div class="f-b__col f-b__col--2">
           <ul class="f-b__items">
-            <li data-c="03" class="f-b__item">
-              <a :href="story.instagram" class="f-b__link">Instagram</a>
+            <li
+              data-c="03"
+              class="f-b__item"
+            >
+              <a
+                :href="story.instagram"
+                class="f-b__link"
+              >Instagram</a>
             </li>
           </ul>
         </div>
@@ -60,10 +122,17 @@
         </div>
       </div>
       <div class="footer__end">
-        <a href="/" class="footer__privacy">
+        <a
+          href="/"
+          class="footer__privacy"
+        >
           © 2021. KSh design / Privacy Policy
         </a>
-        <button aria-label="go top" class="footer__go-top" @click="goTop">
+        <button
+          aria-label="go top"
+          class="footer__go-top"
+          @click="goTop"
+        >
           <svg
             width="28"
             height="29"
@@ -118,6 +187,7 @@ export default {
   data() {
     return {
       isOpen: false,
+      currentIdx: 0
     }
   },
   async fetch() {
@@ -157,6 +227,10 @@ export default {
       gsap.to(window.ss.state, { duration: 0.5, target: 0 })
       this.closeFooter()
     },
+
+    highlightNumber(idx) {
+      this.currentIdx = idx
+    }
   },
 }
 </script>

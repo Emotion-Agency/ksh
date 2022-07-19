@@ -7,7 +7,6 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
     "lint": "yarn lint:js"
   },
   "dependencies": {
@@ -40,8 +39,8 @@
     "gulp-ttf2woff2": "3.0.0",
     "gulp-util": "^3.0.8",
     "gulp-webp": "^4.0.1",
-    "node-sass": "^5.0.0",
     "prettier": "^2.2.1",
+    "sass": "^1.53.0",
     "sass-loader": "^10.1.1",
     "webpack-glsl-loader": "^1.0.1"
   }

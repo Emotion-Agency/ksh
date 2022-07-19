@@ -24,6 +24,7 @@
     "no-new": "off",
     "no-unused-vars": "warn",
     "prefer-const": "warn",
+    "vue/script-setup-uses-vars": "off",
     "prettier/prettier": [
       "off",
       {

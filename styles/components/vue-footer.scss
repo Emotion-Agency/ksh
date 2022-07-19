@@ -61,10 +61,10 @@
 .f-b__col {
   @include media('>#{$br3}') {
     &--1 {
-      width: vw(582);
+      width: vw(782);
     }
     &--2 {
-      width: vw(582);
+      width: vw(382);
     }
     &--3 {
       width: vw(553);
@@ -94,7 +94,7 @@
     }
   }
   + .f-b__item {
-    margin-top: 16px;
+    margin-top: 24px;
   }
   @include media('<=#{$br3}') {
     margin-top: 16px;
@@ -107,8 +107,43 @@
   }
 }
 
+.f-b__item-names {
+  margin-bottom: 32px;
+  font-size: vw(20);
+  display: flex;
+  @media (max-width: $br1) {
+    font-size: 16px;
+    flex-direction: column;
+    span {
+      display: none;
+    }
+  }
+}
+
+.f-b__item-name {
+  color: white;
+  margin-right: 5px;
+  cursor: pointer;
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  flex-direction: column;
+  margin-left: 5px;
+  &:first-child {
+    margin-left: 0px;
+  }
+  @media (max-width: $br1) {
+    margin-left: 0px;
+    margin-top: 10px;
+    &:first-child {
+      margin-top: 0px;
+    }
+  }
+}
+
 .f-b__link {
   display: flex;
+  width: fit-content;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -120,10 +155,14 @@
     background-color: var(--white);
     transition: width 0.5s ease;
   }
-  &:hover {
+  &:hover,
+  &.active {
     &::after {
       width: 100%;
     }
+  }
+  + .f-b__link {
+    margin-top: 8px;
   }
 }
 
