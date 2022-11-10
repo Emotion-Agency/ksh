@@ -2,7 +2,8 @@
   "rewrites": [
     {
       "source": "/tours/:path*",
-      "destination": "http://2365502.ksh3d.web.hosting-test.net/tours/:path*"
+      "destination": "http://2365502.ksh3d.web.hosting-test.net/tours/:path*",
+      "permanent": true
     }
   ]
 }
