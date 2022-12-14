@@ -31,13 +31,15 @@ export default {
         : 'filters:quality(92)'
     },
     getImages() {
-      return this.story.content.body[0].images.map(img => ({
+      const imgs = this.story.content.body[0].images.filter(img => img.preview_image.filename)
+      return imgs.map(img => ({
         _id: keysGenerator(8),
         img: imgix.buildURL(
           transformImage(img.preview_image.filename, this.getFilters),
           {}
         ),
-      }))
+      })
+      )
     },
     getImagesToSlider() {
       return this.story.content.body[0].images.map(img => ({

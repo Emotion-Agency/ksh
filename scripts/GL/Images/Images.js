@@ -132,7 +132,7 @@ export default class Images extends Figure {
     this.$el.removeEventListener('mouseenter', this.onMouseEnter)
     this.$el.removeEventListener('mouseleave', this.onMouseLeave)
 
-    this.disposeTexture(this.texture)
+    this.texture && this.disposeTexture(this.texture)
     super.destroy()
   }
 }
