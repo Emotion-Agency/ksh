@@ -7,7 +7,7 @@ export const loaderAnimation = (duration = 2, delay = 1.5) => {
   const $bg = document.querySelector('[data-a-bg]')
   const $mask = document.querySelector('[data-a-mask]')
   const $h = document.querySelector('[data-a-h]')
-  const $o = document.querySelector('[data-a-o]')
+  const $o = document.querySelectorAll('[data-a-o]')
 
   const animateOut = cb => {
     const callback = cb ?? noop
@@ -43,7 +43,7 @@ export const loaderAnimation = (duration = 2, delay = 1.5) => {
           duration
         )
       $h && tl.to($h, { duration: 1.5, y: '0%', ease: 'power2.out' }, duration)
-      $o && tl.to($o, { duration: 1.5, opacity: 1 }, duration - 0.5)
+      $o.length && tl.to($o, { duration: 1.5, opacity: 1 }, duration - 0.5)
     }, 100)
   }
 
@@ -76,7 +76,7 @@ export const loaderAnimation = (duration = 2, delay = 1.5) => {
         duration - 1
       )
     $h && tl.to($h, { duration: 1.2, y: '100%', ease: 'power2.out' })
-    $o && tl.to($o, { duration: 1.2, opacity: 0 })
+    $o.length && tl.to($o, { duration: 1.2, opacity: 0 })
   }
 
   return { animateOut, animateIn }

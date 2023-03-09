@@ -150,11 +150,10 @@
   padding-top: vw(136);
   padding-bottom: vw(200);
 
-  br {
-    display: none;
-  }
-
   @include media('<=#{$br1}') {
+    br {
+      display: none;
+    }
     padding-top: 80px;
     padding-bottom: 80px;
   }

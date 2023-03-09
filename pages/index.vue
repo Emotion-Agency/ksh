@@ -6,8 +6,8 @@
         <h1 data-a-h class="h1 hero__h">KSh DESIGN</h1>
       </div>
       <div class="hero__text-wrapper">
-        <div class="hero__bottom-text">Ukraine</div>
-        <div class="hero__discover">Discover our services</div>
+        <div data-a-o class="hero__bottom-text">Ukraine</div>
+        <div data-a-o class="hero__discover">Discover our services</div>
       </div>
     </vue-hero>
     <vue-hero
