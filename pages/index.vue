@@ -1,7 +1,7 @@
 <template>
   <main class="home">
     <vue-navbar state="dir" />
-    <vue-hero>
+    <vue-hero style="z-index: 2">
       <div class="hero__h-wrapper">
         <h1 data-a-h class="h1 hero__h">KSh DESIGN</h1>
       </div>
@@ -10,42 +10,46 @@
         <div data-a-o class="hero__discover">Discover our services</div>
       </div>
     </vue-hero>
-    <vue-hero
-      class="service-section"
-      image="/img/services/1.jpg"
-      mask="/img/services/1-mask.png"
-      :is-animating="false"
-    >
-      <div class="container service-section__wrapper">
-        <h2 class="service-section__title">Private Architecture</h2>
+    <div data-parallax-wrapper>
+      <div v-multi-ref:parallax data-offset="0">
+        <vue-hero
+          class="service-section"
+          image="/img/services/1.jpg"
+          mask="/img/services/1-mask.png"
+        >
+          <div class="container service-section__wrapper">
+            <h2 class="service-section__title">Private Architecture</h2>
+          </div>
+        </vue-hero>
+        <section class="section home-1">
+          <div class="container home-1__wrapper">
+            <div class="home-1__left-block">
+              <h3 class="home-1__title">
+                Timeless architecture that <br />
+                stays relevant forever
+              </h3>
+            </div>
+            <div class="home-1__right-block">
+              <p class="home-1__text">
+                The concept is always based on the customer request, specifics
+                of the plot and environment. In our approach to project
+                development, we try and enhance the feeling of interaction with
+                the shape and light, which exert a secret, but deep influence on
+                the level of sensations our clients experience every minute they
+                stay in the space. That is why each project is an open
+                conversation with the client.
+              </p>
+              <p class="home-1__text">
+                Architecture is the basis for design, which remains for many
+                years and is inherited. For this reason, in designing, we always
+                carefully and neatly recheck many times and test all our
+                audacious ideas that we generate for each project.
+              </p>
+            </div>
+          </div>
+        </section>
       </div>
-    </vue-hero>
-    <section class="section home-1">
-      <div class="container home-1__wrapper">
-        <div class="home-1__left-block">
-          <h3 class="home-1__title">
-            Timeless architecture that <br />
-            stays relevant forever
-          </h3>
-        </div>
-        <div class="home-1__right-block">
-          <p class="home-1__text">
-            The concept is always based on the customer request, specifics of
-            the plot and environment. In our approach to project development, we
-            try and enhance the feeling of interaction with the shape and light,
-            which exert a secret, but deep influence on the level of sensations
-            our clients experience every minute they stay in the space. That is
-            why each project is an open conversation with the client.
-          </p>
-          <p class="home-1__text">
-            Architecture is the basis for design, which remains for many years
-            and is inherited. For this reason, in designing, we always carefully
-            and neatly recheck many times and test all our audacious ideas that
-            we generate for each project.
-          </p>
-        </div>
-      </div>
-    </section>
+    </div>
     <vue-hero
       class="service-section"
       image="/img/services/2.jpg"
@@ -246,11 +250,25 @@ export default {
 
   async mounted() {
     const { initImages } = await import('~/scripts/GL/Images/init')
+    this.sectionParallaxInit()
     if (window.scetch) {
       initImages()
     } else {
       emitter.on('scetchCreated', initImages)
     }
+  },
+
+  beforeDestroy() {
+    this.sp && this.sp.destroy()
+  },
+
+  methods: {
+    async sectionParallaxInit() {
+      const { SectionParallax } = await import('~/scripts/SectionParallax')
+
+      this.sp = new SectionParallax(this.$refs.parallax)
+      this.sp.init()
+    },
   },
 }
 </script>
