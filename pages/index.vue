@@ -139,8 +139,8 @@
     </section>
     <vue-hero
       class="service-section"
-      image="/img/services/3.jpg"
-      mask="/img/services/3-mask.png"
+      image="/img/services/4.jpg"
+      mask="/img/services/4-mask.png"
       :is-animating="false"
     >
       <div class="container service-section__wrapper">
@@ -168,8 +168,8 @@
     </section>
     <vue-hero
       class="service-section"
-      image="/img/services/3.jpg"
-      mask="/img/services/3-mask.png"
+      image="/img/services/5.jpg"
+      mask="/img/services/5-mask.png"
       :is-animating="false"
     >
       <div class="container service-section__wrapper">
