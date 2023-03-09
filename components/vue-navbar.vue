@@ -9,10 +9,7 @@
   >
     <div class="container navbar__container">
       <div class="navbar__left">
-        <ul class="navbar__dirs">
-          <li class="navbar__dir">Interior design</li>
-          <li class="navbar__dir">Architecture</li>
-        </ul>
+        <div class="navbar__dirs">KSH Design</div>
         <nuxt-link to="/" class="navbar__name">KSH Design</nuxt-link>
       </div>
       <div class="navbar__right">

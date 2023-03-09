@@ -59,8 +59,10 @@ export default {
 
   methods: {
     async parallaxInit() {
-      const { Parallax } = await import('~/scripts/Parallax')
-      window.parallax = new Parallax()
+      const { Parallax } = await import('@emotionagency/parallax')
+      window.parallax = new Parallax({
+        inViewDetection: false,
+      })
     },
   },
 }

@@ -8,3 +8,10 @@
     padding-right: $g-mo;
   }
 }
+@mixin col($start, $end) {
+  grid-column: #{$start}/#{$end + 1};
+}
+
+@mixin row($start, $end) {
+  grid-row: #{$start}/#{$end + 1};
+}

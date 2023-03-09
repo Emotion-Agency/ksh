@@ -29,6 +29,7 @@
   color: inherit;
   text-align: center;
   width: 100%;
+  color: #eae6dc;
   @include media('>#{$br1}') {
     &:hover {
       opacity: 0.7;

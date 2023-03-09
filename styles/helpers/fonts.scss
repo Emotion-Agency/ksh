@@ -31,7 +31,7 @@
 }
 
 .h1 {
-  @include h;
+  @include h-thin;
   font-size: vw(180);
   line-height: 1em;
   @include media('<=#{$br3}') {

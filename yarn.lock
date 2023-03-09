@@ -964,6 +964,13 @@
     "@emotionagency/utils" "0.0.7"
     ogl "0.0.73"
 
+"@emotionagency/parallax@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@emotionagency/parallax/-/parallax-1.0.3.tgz#6c47b1ee929b06860af75a4eddf9fb5ae1e15ec5"
+  integrity sha512-/WuhIQz6xO/7v4K/fCLRoem9YE9ZrcDSHFhD1I3UX5/OhjgtKbRe4L5lNM/BMg5JtDWt61f8BFoSWWIjMLjDtQ==
+  dependencies:
+    "@emotionagency/utils" "*"
+
 "@emotionagency/smoothscroll@^0.1.8":
   version "0.1.9"
   resolved "https://registry.yarnpkg.com/@emotionagency/smoothscroll/-/smoothscroll-0.1.9.tgz#b196b5a5ed2ea1c976ebdbb7eaffd71d37b956fe"
@@ -971,6 +978,13 @@
   dependencies:
     "@emotionagency/utils" "0.0.6"
     virtual-scroll "^2.1.1"
+
+"@emotionagency/utils@*":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@emotionagency/utils/-/utils-1.1.1.tgz#058cfe8513893cb341976fd186ea4b21f4e54474"
+  integrity sha512-aO754aHjNEeA2Bfk/o5FruSXEAhL1A+WJb4ZLxFNsqm8y9gOwmrWIifqpG3hXO+mNLprPYAF6gMeHP4IuXzoSg==
+  dependencies:
+    ssr-window "^4.0.2"
 
 "@emotionagency/utils@0.0.6":
   version "0.0.6"
@@ -10550,6 +10564,11 @@ sshpk@^1.7.0:
     jsbn "~0.1.0"
     safer-buffer "^2.0.2"
     tweetnacl "~0.14.0"
+
+ssr-window@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/ssr-window/-/ssr-window-4.0.2.tgz#dc6b3ee37be86ac0e3ddc60030f7b3bc9b8553be"
+  integrity sha512-ISv/Ch+ig7SOtw7G2+qkwfVASzazUnvlDTwypdLoPoySv+6MqlOV10VwPSE6EWkGjhW50lUmghPmpYZXMu/+AQ==
 
 ssri@^6.0.1:
   version "6.0.2"
