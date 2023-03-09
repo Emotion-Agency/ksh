@@ -57,7 +57,7 @@
       :is-animating="false"
     >
       <div class="container service-section__wrapper">
-        <h2 class="service-section__title">Landscape Design</h2>
+        <h2 class="service-section__title o-9">Landscape Design</h2>
         <p class="service-section__text">Simple things find a deep sense</p>
       </div>
     </vue-hero>
@@ -103,7 +103,7 @@
       :is-animating="false"
     >
       <div class="container service-section__wrapper">
-        <h2 class="service-section__title">Interior Design</h2>
+        <h2 class="service-section__title o-9">Interior Design</h2>
         <p class="service-section__text">
           Interiors to clients to enjoy their life
         </p>
@@ -144,7 +144,7 @@
       :is-animating="false"
     >
       <div class="container service-section__wrapper">
-        <h2 class="service-section__title">Furniture design</h2>
+        <h2 class="service-section__title o-9">Furniture design</h2>
         <p class="service-section__text">simple form find a deep sense</p>
       </div>
     </vue-hero>
@@ -173,7 +173,7 @@
       :is-animating="false"
     >
       <div class="container service-section__wrapper">
-        <h2 class="service-section__title">Bespoke furniture production</h2>
+        <h2 class="service-section__title o-9">Bespoke furniture production</h2>
       </div>
     </vue-hero>
     <section class="section home-1">
