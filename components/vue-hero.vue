@@ -12,6 +12,7 @@
             :data-a-bg="isAnimating"
             :url="image"
             :webp="webp"
+            :storyblok="storyblok"
           ></vue-img>
         </div>
         <div
@@ -24,6 +25,8 @@
             :data-a-mask="isAnimating"
             :url="mask"
             :webp="webp"
+            :storyblok="storyblok"
+            :quality="50"
           ></vue-img>
         </div>
       </div>
@@ -56,6 +59,10 @@ export default {
     isAnimating: {
       type: Boolean,
       default: true,
+    },
+    storyblok: {
+      type: Boolean,
+      default: false,
     },
   },
 }

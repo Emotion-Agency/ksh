@@ -3,6 +3,8 @@
 </template>
 
 <script>
+import { transformImage } from '~/scripts/utils/storyblokImage'
+
 export default {
   props: {
     url: {
@@ -12,6 +14,14 @@ export default {
     webp: {
       type: Boolean,
       default: true,
+    },
+    storyblok: {
+      type: Boolean,
+      default: false,
+    },
+    quality: {
+      type: Number,
+      default: 82,
     },
   },
 
@@ -24,6 +34,15 @@ export default {
     },
 
     fullUrl() {
+      if (this.storyblok) {
+        const finalUrl = transformImage(
+          this.url,
+          `filters:quality(${this.quality}):format(webp)`
+        )
+
+        return finalUrl
+      }
+
       if (this.webp) {
         return this.$store.state.app.isWebp ? this.getWebpUrl : this.url
       } else {

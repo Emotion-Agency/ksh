@@ -64,8 +64,14 @@ export class SectionParallax {
       const $img = $el.querySelector('[data-a-bg]')
       const $mask = $el.querySelector('[data-a-mask]')
 
-      gsap.to($img, { duration: 1.2, scale: 1, ease })
-      gsap.to($mask, { duration: 1.2, opacity: 1, ease, delay: 1 })
+      gsap.to($img, { duration: 1.2, scale: 1, ease, overwrite: true })
+      gsap.to($mask, {
+        duration: 1.2,
+        opacity: 1,
+        ease,
+        overwrite: true,
+        delay: 1,
+      })
       $el.classList.add('animated-in')
       $el.classList.remove('animated-out')
     }
@@ -77,8 +83,8 @@ export class SectionParallax {
 
       const $img = $el.querySelector('[data-a-bg]')
       const $mask = $el.querySelector('[data-a-mask]')
-      gsap.to($img, { duration: 1.2, scale: 1.1, ease })
-      gsap.to($mask, { duration: 1.2, opacity: 0, ease })
+      gsap.to($img, { duration: 1.2, scale: 1.1, ease, overwrite: true })
+      gsap.to($mask, { duration: 1.2, opacity: 0, ease, overwrite: true })
       $el.classList.remove('animated-in')
       $el.classList.add('animated-out')
     }
