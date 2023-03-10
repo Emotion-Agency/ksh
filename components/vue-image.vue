@@ -5,6 +5,8 @@
 </template>
 
 <script>
+import { transformImage } from '~/scripts/utils/storyblokImage'
+
 export default {
   props: {
     prefix: {
@@ -14,6 +16,10 @@ export default {
     url: {
       type: String,
       default: '/img/comm-1.jpg',
+    },
+    storyblok: {
+      type: Boolean,
+      default: false,
     },
   },
   computed: {
@@ -25,6 +31,14 @@ export default {
     },
 
     fullUrl() {
+      if (this.storyblok) {
+        const finalUrl = transformImage(
+          this.url,
+          'filters:quality(82):format(webp)'
+        )
+
+        return `background-image: url('${finalUrl}')`
+      }
       const url = this.$store.state.app.isWebp ? this.getWebpUrl : this.url
 
       return `background-image: url(${url})`
