@@ -87,3 +87,7 @@ body {
 .o-9 {
   opacity: 0.9;
 }
+
+[data-parallax-wrapper] {
+  pointer-events: none;
+}

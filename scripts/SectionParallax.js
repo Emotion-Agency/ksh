@@ -1,4 +1,4 @@
-import { raf, resize } from '@emotionagency/utils'
+import { raf } from '@emotionagency/utils'
 import gsap from 'gsap'
 
 const ease = 'power1.inOut'
@@ -13,13 +13,8 @@ export class SectionParallax {
 
   init() {
     this.compute = this.compute.bind(this)
-    this.resize = this.resize.bind(this)
 
-    resize.on(this.resize)
-  }
-
-  resize() {
-    window.innerWidth > 1060 ? raf.on(this.compute) : raf.off(this.compute)
+    raf.on(this.compute)
   }
 
   get $wrapper() {
@@ -91,6 +86,5 @@ export class SectionParallax {
 
   destroy() {
     raf.off(this.compute)
-    resize.off(this.resize)
   }
 }
