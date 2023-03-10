@@ -198,6 +198,19 @@
       @include row(6, 6);
     }
   }
+
+  @include media('<=#{$br4}') {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+.about-2__image-wrapper {
+  @include media('<=#{$br4}') {
+    width: 85% !important;
+  }
 }
 
 .about-2__img {

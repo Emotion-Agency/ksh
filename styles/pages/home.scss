@@ -111,7 +111,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  align-content: center;
   height: 100vh;
+  height: -webkit-fill-available;
   width: 100%;
 }
 
@@ -122,8 +124,12 @@
   color: var(--white);
   text-align: center;
 
-  @include media('<=#{$br2}') {
+  @include media('<=#{$br1}') {
     font-size: size(150, 60);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 
@@ -132,15 +138,16 @@
   font-size: vw(36);
   line-height: 1.5em;
   text-transform: uppercase;
+  text-align: center;
   transform: translateX(-50%);
   position: absolute;
   left: 50%;
   bottom: vw(42);
   width: 100%;
-  text-align: center;
 
   @include media('<=#{$br1}') {
     font-size: size(36, 16);
+    bottom: 20px;
   }
 }
 
