@@ -5,7 +5,7 @@ require('dotenv').config({
 })
 
 export default {
-  target: 'server',
+  target: 'static',
 
   server: {
     port: '3000',
