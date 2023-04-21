@@ -23,6 +23,7 @@
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/pwa": "^3.3.5",
     "axios": "^0.23.0",
+    "esm": "^3.2.25",
     "core-js": "^3.9.1",
     "gsap": "^3.6.0",
     "imagesloaded": "^4.1.4",
@@ -41,7 +42,7 @@
     "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^7.7.0",
-    "esm": "^3.2.25",
+    
     "gulp": "^4.0.2",
     "gulp-imagemin": "^7.1.0",
     "gulp-ttf2woff2": "3.0.0",
