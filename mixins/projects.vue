@@ -31,15 +31,16 @@ export default {
         : 'filters:quality(92)'
     },
     getImages() {
-      const imgs = this.story.content.body[0].images.filter(img => img.preview_image.filename)
+      const imgs = this.story.content.body[0].images.filter(
+        img => img.preview_image.filename
+      )
       return imgs.map(img => ({
         _id: keysGenerator(8),
         img: imgix.buildURL(
           transformImage(img.preview_image.filename, this.getFilters),
           {}
         ),
-      })
-      )
+      }))
     },
     getImagesToSlider() {
       return this.story.content.body[0].images.map(img => ({
@@ -75,6 +76,19 @@ export default {
         ),
       }
     },
+  },
+
+  async mounted() {
+    // this.story.content =
+    const data = await this.$storyapi
+      .get(`cdn/stories${this.$route.path}`, {
+        version: 'draft',
+      })
+      .then(res => {
+        return res.data
+      })
+
+    this.story.content = data.story.content
   },
 
   methods: {

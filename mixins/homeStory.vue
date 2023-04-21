@@ -18,5 +18,18 @@ export default {
       story: { content: {} },
     }
   },
+
+  async mounted() {
+    // this.story.content =
+    const data = await this.$storyapi
+      .get(`cdn/stories/home`, {
+        version: 'draft',
+      })
+      .then(res => {
+        return res.data
+      })
+
+    this.story.content = data.story.content
+  },
 }
 </script>
