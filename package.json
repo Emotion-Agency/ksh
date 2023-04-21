@@ -9,6 +9,11 @@
     "generate": "nuxt generate",
     "lint": "yarn lint:js"
   },
+
+  "engines": {
+      "node": ">=0.10.3 <16"
+  },
+
   "dependencies": {
     "@emotionagency/glhtml": "^1.0.1",
     "@emotionagency/parallax": "^1.0.3",
