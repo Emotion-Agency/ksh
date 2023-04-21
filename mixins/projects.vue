@@ -79,16 +79,19 @@ export default {
   },
 
   async mounted() {
-    // this.story.content =
-    const data = await this.$storyapi
-      .get(`cdn/stories${this.$route.path}`, {
-        version: 'draft',
-      })
-      .then(res => {
-        return res.data
-      })
+    try {
+      const data = await this.$storyapi
+        .get(`cdn/stories${this.$route.path}`, {
+          version: 'draft',
+        })
+        .then(res => {
+          return res.data
+        })
 
-    this.story.content = data.story.content
+      this.story.content = data.story.content
+    } catch (error) {
+      console.log(error)
+    }
   },
 
   methods: {
