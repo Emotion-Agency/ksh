@@ -91,7 +91,6 @@
   @include h;
   font-size: vw(36);
   line-height: 1.5em;
-  text-transform: capitalize;
 
   @include media('>=#{$br1}') {
     transform: translateX(-50%);
@@ -137,7 +136,6 @@
   @include h;
   font-size: vw(36);
   line-height: 1.5em;
-  text-transform: capitalize;
   text-align: center;
   transform: translateX(-50%);
   position: absolute;
