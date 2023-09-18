@@ -91,7 +91,6 @@
   @include h;
   font-size: vw(36);
   line-height: 1.5em;
-  text-transform: uppercase;
 
   @include media('>=#{$br1}') {
     transform: translateX(-50%);
@@ -137,7 +136,6 @@
   @include h;
   font-size: vw(36);
   line-height: 1.5em;
-  text-transform: uppercase;
   text-align: center;
   transform: translateX(-50%);
   position: absolute;
@@ -248,6 +246,10 @@
       @include media('<=#{$br1}') {
         margin-top: 12px;
       }
+    }
+
+    > b {
+      font-weight: 250;
     }
 
     @include media('<=#{$br1}') {
