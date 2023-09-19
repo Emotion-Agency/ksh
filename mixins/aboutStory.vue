@@ -32,6 +32,7 @@ export default {
       this.story.content = data.story.content
     } catch (error) {
       console.log(error)
+      return error
     }
   },
 }
