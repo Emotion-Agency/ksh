@@ -1,44 +1,26 @@
 <template>
   <div class="projects">
     <vue-navbar />
-    <vue-hero
-      :image="getHeroImages.image"
-      :mask="getHeroImages.mask"
-      :webp="false"
-    >
-      <div class="hero__h-wrapper">
-        <h1 data-a-h class="h1 hero__h projects__h">Commercial Interiors</h1>
-      </div>
-    </vue-hero>
-    <vue-masonry :items="getImages" @clickItem="openSlider" />
-    <vue-footer
+    <!-- <vue-footer
       :image="getFooterImages.image"
       :mask="getFooterImages.mask"
       :webp="false"
-    />
-    <slider-window
-      :items="getImagesToSlider"
-      :is-open="isSliderOpen"
-      :start-from="startFrom"
-      @close="closeSlider"
-    />
+    /> -->
   </div>
 </template>
 
 <script>
-import VueFooter from '~/components/vue-footer.vue'
-import VueHero from '~/components/vue-hero.vue'
-import VueMasonry from '~/components/vue-masonry.vue'
+// import VueFooter from '~/components/vue-footer.vue'
 import transition from '~/mixins/transition.vue'
-import projects from '~/mixins/projects.vue'
+import project from '~/mixins/project.vue'
 
 const TITLE = 'Commercial Interiors | KSh Design Buro'
 const DESCRIPTION =
   'This section presents our projects in the field of Commercial Interiors. We design Commercial Interiors for restaurants, shops and office real estate'
 
 export default {
-  components: { VueHero, VueFooter, VueMasonry },
-  mixins: [transition, projects],
+  // components: { VueFooter },
+  mixins: [transition, project],
 
   head: {
     title: TITLE,
@@ -60,6 +42,9 @@ export default {
       },
     ],
   },
+
+  mounted() {
+    console.log(this.story)
+  },
 }
 </script>
-
